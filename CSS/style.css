@@ -1,0 +1,2281 @@
+/* Styles généraux */
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden; /* Pour éviter le défilement horizontal */
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Tiro Telugu", sans-serif;
+    font-weight: bold;
+  }
+
+  p, a {
+    font-family: "Poppins", sans-serif;
+  }
+}
+
+/* Afficher l'icône burger uniquement sur les smartphones */
+@media screen and (max-width: 767px) {
+
+  /* BAR DE NAVIGATION */
+  .navbar {
+    background-color: #7b00d2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Centre les éléments verticalement */
+    padding: 0 20px; /* Espace à gauche et à droite */
+    box-shadow: 0 4px 10px #ffffffb4; /* Ombre blanche subtile */
+    height: 100px; /* Ajustez la hauteur de la navbar selon vos préférences */
+    border-bottom: 2px solid white; /* Bordure fine blanche en bas */
+    position: fixed;            /* Fixe la barre en haut de l'écran */
+    top: 0;                     /* Place la barre en haut de la fenêtre */
+    left: 0;
+    width: 100%;
+    background-color: #4b0082;  /* Couleur de fond de la barre */
+    z-index: 1000;              /* Assure que la barre est au-dessus des autres éléments */
+ 
+  }
+
+  /* Logo */
+  .logo img {
+    width: 50px;
+    margin-left: 20px; /* Ajustez la valeur pour le décaler à droite */
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.932); /* Ombre blanche */
+    border-radius: 30px; /* Arrondir l'angle en bas à droite */
+  }
+
+  .burger {
+    display: block;
+  }
+
+
+  /* Masquer les liens sur petits écrans */
+  .nav-links {
+    display: none; /* Masque la liste de liens par défaut */
+    flex-direction: column; /* Aligne les liens verticalement */
+    position: absolute; /* Positionne la liste de liens de manière absolue */
+    top: 60px; /* Ajuste la position en fonction de la hauteur de la navbar */
+    right: 0;
+    background-color: #4b0082; /* Couleur de fond de la liste déroulante */
+    width: 100%; /* Prend toute la largeur de l'écran */
+    padding: 10px 0;
+    z-index: 1000; /* Assure que la liste apparaît au-dessus des autres éléments */
+  }
+  
+
+  /* Afficher les liens lorsque le menu burger est actif */
+  .nav-links.active {
+    display: flex;
+    flex-direction: column; /* Afficher les liens en colonne */
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: #4b0082;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+
+  /* Ajuster l'icône burger */
+  .center-icon {
+    display: flex;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    margin-left: auto;
+  }
+
+  
+}
+
+
+/* Afficher les liens sur les tablettes */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  
+  .nav-links {
+    display: flex; /* Affiche les liens en ligne */
+    justify-content: flex-end; /* Aligne les liens vers la droite */
+    align-items: flex-start; /* Aligne les liens vers le haut */
+    margin-left: 100px; /* Ajustez cette valeur si nécessaire */
+    margin-top: 10px; /* Ajoute un espacement en haut */
+    list-style: none;
+  }
+
+  .nav-links li {
+    margin: 0 10px; /* Réduit l'espace entre les éléments <li> */
+  }
+
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    justify-content: center; /* Centre les liens dans l'espace disponible */
+  }
+
+  
+  /* Listes non numérotées */
+  ul {
+    list-style-type: none;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* BAR DE NAVIGATION */
+  .navbar {
+    background-color: #7b00d2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Centre les éléments verticalement */
+    padding: 0 20px; /* Espace à gauche et à droite */
+    box-shadow: 0 4px 10px #ffffffb4; /* Ombre blanche subtile */
+    height: 100px; /* Ajustez la hauteur de la navbar selon vos préférences */
+    border-bottom: 2px solid white; /* Bordure fine blanche en bas */
+    border-bottom-right-radius: 50px; /* Arrondir l'angle en bas à droite */
+    position: fixed;            /* Fixe la barre en haut de l'écran */
+    width: 100%;
+    background-color: #4b0082;  /* Couleur de fond de la barre */
+    z-index: 1000;              /* Assure que la barre est au-dessus des autres éléments */
+    
+  }
+
+  /* Logo */
+  .logo img {
+  display: flex;
+  align-items: flex-start; /* Aligne les liens vers le haut */  
+  width: 50px;
+  margin-left: 5px; /* Ajustez la valeur pour le décaler à droite */
+  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.932); /* Ombre blanche */
+  border-radius: 30px; /* Arrondir l'angle en bas à droite */
+  }
+
+  .center-icon {
+    display: none; /* Masque complètement l'icône burger */
+  }
+
+}
+
+/* Afficher les liens sur les grands écrans */
+@media screen and (min-width: 1024px){
+
+  .nav-links {
+    display: flex; /* Affiche les liens en ligne */
+    justify-content: flex-end; /* Aligne les liens vers la droite */
+    align-items: flex-start; /* Aligne les liens vers le haut */
+    margin-left: 100px; /* Ajoute un espacement à droite */
+    margin-top: 10px; /* Ajoute un espacement en haut pour mieux centrer */
+    list-style: none;
+    
+  }
+  
+  .nav-links li {
+    margin: 0 60px;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    justify-content: center; /* Centrer les liens dans l'espace disponible */
+  }
+  
+  /* Listes non numérotées */
+  ul {
+    list-style-type: none;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* BAR DE NAVIGATION */
+  .navbar {
+    background-color: #7b00d2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Centre les éléments verticalement */
+    padding: 0 20px; /* Espace à gauche et à droite */
+    box-shadow: 0 4px 10px #ffffffb4; /* Ombre blanche subtile */
+    height: 100px; /* Ajustez la hauteur de la navbar selon vos préférences */
+    border-bottom: 2px solid white; /* Bordure fine blanche en bas */
+    border-bottom-right-radius: 50px; /* Arrondir l'angle en bas à droite */
+    position: fixed;            /* Fixe la barre en haut de l'écran */
+    width: 100%;
+    background-color: #4b0082;  /* Couleur de fond de la barre */
+    z-index: 1000;              /* Assure que la barre est au-dessus des autres éléments */
+    
+  }
+
+  /* Logo */
+  .logo img {
+  display: flex;
+  align-items: flex-start; /* Aligne les liens vers le haut */  
+  width: 50px;
+  margin-left: 5px; /* Ajustez la valeur pour le décaler à droite */
+  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.932); /* Ombre blanche */
+  border-radius: 30px; /* Arrondir l'angle en bas à droite */
+  }
+
+  .center-icon {
+    display: none; /* Masque complètement l'icône burger */
+  }
+
+  
+}
+
+
+/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+
+
+/* HEADER */
+
+/* Pour les téléphones mobiles (écrans de 767px et moins) */
+
+@media screen and (max-width: 767px) {
+  .background {
+      background-image: url('../IMG/background-mobile.svg');  /* Une image différente pour les petits écrans */
+  }
+
+  .content {
+    width: 90%; /* Prend 90% de la largeur de l'écran */
+    max-width: 800px; /* Fixe une largeur maximale pour éviter que le texte s'étire trop */
+    margin: 0 0 0 5px; /* Centre horizontalement la div */
+    text-align: left; /* Aligne le texte à gauche */
+    box-sizing: border-box; /* Inclut le padding dans la largeur totale */
+    display: block;
+    font-size: large;
+    width: 90%;
+    color: white;                           /* Texte en blanc pour contraste */
+    border-radius: 8px;
+    text-align: left;
+  
+  }
+
+  header {
+    background-image: url('../IMG/background.svg');  /* Image de fond */
+    background-size: cover;                   /* L'image couvre toute la largeur et la hauteur */
+    background-position: center;              /* Centrer l'image */
+    background-repeat: no-repeat;             /* Ne pas répéter l'image */
+    width: 100%;                              /* Prend toute la largeur de l'élément parent */
+    height: 85vh;                            /* Ajustez la hauteur du header selon vos besoins */
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); /* Ombre (si vous voulez) */
+  }
+  
+  .header-section {
+    min-height: 20vh;
+    padding: 0px 10px;
+  }
+  
+
+  /* Styles pour les titres et le texte */
+  .header-section h1 {
+    display: flex;
+    font-size: 3em; /* Ajuste la taille du titre pour les petits écrans */
+    margin-bottom: 60px; /* Espace sous le titre */
+    margin-top: 30px;
+    font-weight: bold;           /* Texte en gras */
+    justify-content: flex-start; /* Aligne le texte à gauche */
+    gap: 10px; /* Espace entre le prénom et le nom */
+    flex-wrap: nowrap; /* Empêche le nom de se diviser en deux lignes */
+  }
+  
+  .header-section h1 span {
+    display: inline-block; /* Assure que chaque mot est en ligne */
+    margin-right: 10px; /* Espace entre le prénom et le nom */
+  }
+
+
+  .header-section h2 {
+    font-size: 1.5em; /* Ajuste la taille du sous-titre */
+    font-weight: bold ;            /* Taille légèrement plus petite que le titre */
+    margin-bottom: 35px;
+  }
+
+  .header-section p {
+    font-size: 17px; /* Taille de police du paragraphe */
+    line-height: 1.6; /* Espacement entre les lignes pour une meilleure lisibilité */
+    margin-bottom: 20px; /* Espace sous le paragraphe */
+  }
+
+  
+  
+  /* Styles pour le lien de téléchargement du CV */
+  .header-section a {
+    color: #fff;
+    background-color: transparent;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.3s;
+  }
+   
+  #monCV {
+    display: inline-block;
+    border-color: #4b0082;
+    border-radius: 20px;
+    margin-top: 20px;
+    align-self: flex-start; /* Aligne le bouton à gauche */
+    border: 2px solid #ffffff;
+    color: #ffffff; /* Texte blanc par défaut */
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transition fluide */
+    font-size: 17px;            /* Taille plus petite pour le paragraphe */
+    line-height: 1.5;
+    margin-bottom: 25px;         /* Espace sous le paragraphe */      /* Bordure blanche autour */
+  }
+  
+  /* Effet de survol pour le bouton "Télécharger mon CV" */
+  #monCV:hover {
+    background-color: #f9dbfc; /* Fond blanc au survol */
+    color: #4b0082; /* Texte violet au survol */
+
+    a:hover {
+      background-color: #7b00d2;
+    }
+  }
+  
+  .background {
+    background-image: url('../IMG/background.svg');  /* L'image de fond */
+    background-size: auto;                   /* L'image couvre toute la surface */
+    background-position: center;              /* Centrer l'image */
+    background-repeat: no-repeat;             /* Ne pas répéter l'image */
+    width: 100%;                              /* Prend toute la largeur de l'élément */
+    height: 100%;                            /* Prend toute la hauteur de la fenêtre */
+  }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px){
+  .background {
+      background-image: url('../IMG/background-mobile.svg');  /* Une image différente pour les petits écrans */
+  }
+
+  .content {
+    width: 90%; /* Prend 90% de la largeur de l'écran */
+    max-width: 800px; /* Fixe une largeur maximale pour éviter que le texte s'étire trop */
+    margin: 0 0 0 5px; /* Centre horizontalement la div */
+    text-align: left; /* Aligne le texte à gauche */
+    box-sizing: border-box; /* Inclut le padding dans la largeur totale */
+    display: block;
+    font-size: large;
+    width: 80%;
+    color: white;                           /* Texte en blanc pour contraste */
+    padding: 30px 5px;
+    border-radius: 8px;
+    text-align: left;
+  
+  }
+
+  header {
+    background-image: url('../IMG/background.svg');  /* Image de fond */
+    background-size: cover;                   /* L'image couvre toute la largeur et la hauteur */
+    background-position: center;              /* Centrer l'image */
+    background-repeat: no-repeat;             /* Ne pas répéter l'image */
+    width: 100%;                              /* Prend toute la largeur de l'élément parent */
+    height: 100%;                            /* Ajustez la hauteur du header selon vos besoins */
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); /* Ombre (si vous voulez) */
+  }
+  
+  .header-section {
+    min-height: 50vh;
+    padding: 50px 20px;
+  }
+
+  /* Styles pour les titres et le texte */
+  .header-section h1 {
+    display: flex;
+    font-size: 3em; /* Ajuste la taille du titre pour les petits écrans */
+    margin-bottom: 60px; /* Espace sous le titre */
+    font-weight: bold;           /* Texte en gras */
+    justify-content: flex-start; /* Aligne le texte à gauche */
+    gap: 10px; /* Espace entre le prénom et le nom */
+    flex-wrap: nowrap; /* Empêche le nom de se diviser en deux lignes */
+  }
+  
+  .header-section h1 span {
+    display: inline-block; /* Assure que chaque mot est en ligne */
+    margin-right: 10px; /* Espace entre le prénom et le nom */
+  }
+
+
+  .header-section h2 {
+    font-size: 1.5em; /* Ajuste la taille du sous-titre */
+    font-size: 2em;
+    font-weight: bold ;            /* Taille légèrement plus petite que le titre */
+    margin-bottom: 35px;
+  }
+
+  .header-section p {
+    font-size: 1em; /* Taille de police du paragraphe */
+    line-height: 1.6; /* Espacement entre les lignes pour une meilleure lisibilité */
+    margin-bottom: 20px; /* Espace sous le paragraphe */
+  }
+
+  
+  /* Styles pour le lien de téléchargement du CV */
+  .header-section a {
+    color: #fff;
+    background-color:transparent;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.3s;
+  }
+   
+  #monCV {
+    display: inline-block;
+    border-color: #4b0082;
+    border-radius: 20px;
+    margin-top: 20px;
+    border: 2px solid #ffffff;
+    color: #ffffff; /* Texte blanc par défaut */
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Effet de survol pour le bouton "Télécharger mon CV" */
+  #monCV:hover {
+    background-color: #f9dbfc; /* Fond blanc au survol */
+    color: #4b0082; /* Texte violet au survol */
+
+    a:hover {
+      background-color: #7b00d2;
+    }
+
+  }
+  
+  
+  .background {
+    background-image: url('../IMG/background.svg');  /* L'image de fond */
+    background-size: auto;                   /* L'image couvre toute la surface */
+    background-position: center;              /* Centrer l'image */
+    background-repeat: no-repeat;             /* Ne pas répéter l'image */
+    width: 100%;                              /* Prend toute la largeur de l'élément */
+    height: 100%;                            /* Prend toute la hauteur de la fenêtre */
+  }
+
+}
+
+/* Ajustement pour les écrans moyens et grands */
+@media screen and (min-width: 1024px) {
+  
+    .background {
+      background-image: url('../IMG/background.svg'); /* L'image de fond */
+      background-size: cover; /* L'image couvre toute la surface */
+      background-position: center; /* Centrer l'image */
+      background-repeat: no-repeat; /* Ne pas répéter l'image */
+      width: 100%; /* Prend toute la largeur de l'élément */
+      height: 100vh; /* Prend toute la hauteur de l'écran */
+    }
+  
+    .header-section {
+      background-image: url('../IMG/background.svg'); /* L'image de fond */
+      background-size: cover; /* L'image couvre toute la largeur et la hauteur */
+      background-position: center; /* Centrer l'image */
+      background-repeat: no-repeat; /* Ne pas répéter l'image */
+      background-attachment: fixed; /* Fixe l'image pour un effet de parallaxe */
+      min-height: 100vh; /* Prend toute la hauteur de l'écran */
+      padding: 50px 20px; /* Espace autour du contenu */
+      box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); /* Ombre subtile */
+    }
+  
+    .content {
+      max-width: 1300px;
+      margin: 20px ; /* Centre horizontalement avec de l'espace en haut */
+      text-align: left; /* Garde le texte aligné à gauche */
+      padding: 20px; /* Espace autour du contenu */
+      color: white; /* Texte en blanc pour contraste */
+      box-sizing: border-box; /* Inclut le padding dans la largeur totale */
+    }
+  
+    /* Styles pour les titres et le texte */
+    .header-section h1 {
+      font-size: 8em; /* Ajuste la taille du titre */
+      font-weight: bold; /* Texte en gras */
+      margin-bottom: 40px; /* Espace sous le titre */
+    }
+  
+    .header-section h2 {
+      font-size: 4em; /* Taille du sous-titre */
+      font-weight: bold; /* Texte en gras */
+      margin-bottom: 30px; /* Espace sous le sous-titre */
+    }
+  
+    .header-section p {
+      font-size: 2em; /* Taille de police du paragraphe */
+      line-height: 1.6; /* Espacement entre les lignes pour une meilleure lisibilité */
+      margin-bottom: 30px; /* Espace sous le paragraphe */
+    }
+  
+    /* Styles pour le lien de téléchargement du CV */
+    .header-section a {
+      color: #fff;
+      background-color: transparent;
+      padding: 12px 24px;
+      text-decoration: none;
+      font-size: 2em;
+      font-weight: bold;
+      display: inline-block;
+      transition: background-color 0.3s;
+    }
+  
+    #monCV {
+      display: inline-block;
+      border-color: #4b0082;
+      border-radius: 20px;
+      margin-top: 20px;
+      border: 2px solid #ffffff;
+      color: #ffffff; /* Texte blanc par défaut */
+      padding: 10px 20px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+  
+    /* Effet de survol pour le bouton "Télécharger mon CV" */
+    #monCV:hover {
+      background-color: #f9dbfc; /* Fond blanc au survol */
+      color: #4b0082; /* Texte violet au survol */
+
+      a:hover {
+        background-color: #7b00d2;
+      }
+
+    }
+  
+  }
+
+/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+
+/* SECTION 1 (ABOUT-SECTION)  */
+
+/* Pour les smartphones (moins de 768px) */
+@media screen and (max-width: 767px) {
+  .about-section {
+    display: flex;
+    flex-direction: column; /* Met les éléments en colonne */
+    align-items: flex-start; /* Aligne les éléments sur la gauche */
+    padding: 20px 10px; /* Ajoute du padding pour les smartphones */
+    padding-bottom: 50px;
+  }
+  
+  .about-content{
+    margin-left: 15px;
+  }
+
+  /* Pour les éléments de texte dans votre section */
+  .about-section, .right, .info-blocks, .about-section p, .about-section h1, .about-section h2, .about-section a {
+    color: #4b0082; /* Couleur violette */
+  }
+  
+  .title-underline {
+    border-bottom: 5px solid #4b0082; /* Crée un trait violet de 2 pixels */
+    margin-top: -15px; /* Espace au-dessus de la ligne */
+    margin-bottom: 20px; /* Espace en dessous de la ligne */
+    width: 20%; /* Ajustez la largeur de la ligne */
+  }
+  
+  .info-blocks {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column; /* Aligne les blocs de liens verticalement */
+    align-items: flex-start; /* Aligne les blocs à gauche */
+    gap: 5px; /* Réduit l'espace entre les blocs de liens */
+    width: 100%;
+    
+  }
+  
+  .left {
+    margin-top: 20px;
+    margin-right: 10px;
+    width: 100px; /* Ajustez cette valeur pour agrandir le cercle */
+    height: 100px; /* Assurez-vous que la hauteur est égale à la largeur */
+    border-radius: 100%; /* Rend le conteneur circulaire */
+    overflow: hidden; /* Coupe les parties de l'image qui dépassent du cercle */
+    display: flex; /* Pour un meilleur alignement, si nécessaire */
+    justify-content: center; /* Centre l'image horizontalement */
+    align-items: center; /* Centre l'image verticalement */
+
+    .about-image {
+      width: 130px; /* Ajustez cette largeur pour la taille du rond */
+      height: 130px; /* Assurez-vous que la hauteur est égale à la largeur */
+      object-fit: cover; /* Ajuste l'image pour qu'elle remplisse le rond sans être déformée */
+    }
+  }
+  
+  
+  
+  .right {
+    width: 100%; /* Prend toute la largeur */
+    margin-top: 20px;
+    padding: 0 0px; /* Ajoute un léger padding pour éviter que le texte touche les bords */
+    text-align: start; /* Centre le texte */
+  }
+
+  .aboutme h2 {
+    font-size: 25px;
+    position: relative;
+    display: inline-block; /* Assure que le titre ne s'étend pas trop large */
+    margin-bottom: 20px; /* Espace en dessous du titre */
+
+  }
+
+  .aboutme h2::after {
+    content: ""; /* Contenu vide pour l'élément pseudo */
+    display: block;
+    width: 50px; /* Longueur du trait */
+    height: 5px; /* Épaisseur du trait */
+    background-color: #4b0082; /* Couleur violette */
+    margin-top: 10px; /* Espace entre le titre et le trait */
+  }
+
+  .info-blocks p, .right p {
+    font-size: 17px; /* Réduit la taille de la police pour un meilleur ajustement */
+    line-height: 1.4; /* Réduit l'espacement entre les lignes */
+    margin: 0; /* Supprime les marges extérieures */
+    margin-bottom: 15px;
+  }
+
+  
+
+  .info-list {
+    list-style: none; /* Supprime les puces des éléments de la liste */
+    padding: 0; /* Supprime le padding par défaut */
+    margin: 0; /* Supprime les marges par défaut */
+    width: 100%; /* Prend toute la largeur de la page */
+    gap: 10px;
+  }
+  
+  .info-list li {
+    width: 100%;
+    display: flex; /* Utilise Flexbox pour aligner le logo et le texte */
+    align-items: center; /* Centre le contenu verticalement */
+    margin-bottom: 15px; /* Espace entre chaque élément de la liste */
+  }
+
+  
+  .info-list i {
+    flex-shrink: 0; /* Empêche le logo de se réduire */
+    margin-right: 10px; /* Ajoute un espace fixe à droite du logo */
+    width: 24px; /* Taille du cercle pour les icônes/logos */
+    height: 24px; /* Taille du cercle pour les icônes/logos */
+    border-radius: 50%; /* Crée un cercle autour de l'icône/logo */
+    background-color: #4b0082; /* Couleur de fond violette pour le cercle */
+    color: white; /* Couleur de l'icône/logo à l'intérieur du cercle */
+    display: flex; /* Pour centrer l'icône/logo dans le cercle */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    font-size: 17px; /* Taille de l'icône/logo */
+  }
+
+
+  .info-list a {
+    font-size: 17px; /* Réduit la taille du texte des liens */
+    color: #4b0082; /* Couleur violette des liens */
+    background: transparent;
+    display: flex; /* Pour aligner le logo avec le texte */
+    gap: 5px; /* Espace entre le logo et le texte */
+    white-space: nowrap; /* Empêche le texte de passer à la ligne */
+    text-align: left;
+    font-weight: normal; /* Assure que les liens ne sont pas en gras */
+    padding-right: -20px;
+  }
+
+  .info-list strong {
+    margin-right: 5px; /* Espace entre l'intitulé et le lien */
+    font-size: 17px; /* Réduit la taille de l'intitulé si nécessaire */
+  }
+
+  .underline a {
+    width: 100%; /* Prend toute la largeur */
+    padding: 0px;
+    display: flex; /* Utilise Flexbox pour aligner les éléments en ligne */
+    align-items: center; /* Centre verticalement les éléments */
+  }
+  
+  .underline i {
+    flex-shrink: 0; /* Empêche le logo de se rétrécir */
+    margin-right: 10px; /* Ajoute un espace fixe à droite du logo */
+  }
+  
+  #contact-link {
+    font-size: 17px;
+    display: inline-block;
+    border-color: #4b0082;
+    border-radius: 8px;
+    align-self: center;
+    background-color: transparent;  /* Supprime le fond */
+    border: 2px solid #4b0082; /* Bordure violette */
+    color: #4b0082; /* Couleur du texte violette */
+    padding: 10px 20px; /* Espacement interne */
+    border-radius: 20px; /* Angles arrondis */
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    margin: 0;
+    margin-top: 20px;  /* Espacement supplémentaire en haut du bouton */
+
+  }
+  
+  /* Effet de survol pour le bouton "Contactez-moi" */
+  #contact-link:hover, #contact-link:hover a {
+    background-color: #4b0082; /* Fond violet au survol */
+    color: #f9dbfc; /* Texte blanc au survol */
+    text-decoration: none; /* Supprime le soulignement si c'est un lien */
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+}
+
+/* Pour les tablettes (768px à 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .about-section {
+    display: flex;
+    flex-direction: column; /* Met les éléments en colonne */
+    align-items: flex-start; /* Aligne les éléments sur la gauche */
+    padding: 20px 10px; /* Ajoute du padding pour les smartphones */
+    padding-bottom: 50px;
+  }
+  
+  .about-content{
+    margin-left: 15px;
+  }
+
+  /* Pour les éléments de texte dans votre section */
+  .about-section, .right, .info-blocks, .about-section p, .about-section h1, .about-section h2, .about-section a {
+    color: #4b0082; /* Couleur violette */
+  }
+  
+  .title-underline {
+    border-bottom: 5px solid #4b0082; /* Crée un trait violet de 2 pixels */
+    margin-top: -15px; /* Espace au-dessus de la ligne */
+    margin-bottom: 20px; /* Espace en dessous de la ligne */
+    width: 20%; /* Ajustez la largeur de la ligne */
+  }
+  
+  .info-blocks {
+    margin-top: 50px;
+    margin-left: 50px;
+    display: flex;
+    align-items: flex-start; /* Aligne les blocs à gauche */
+    gap: 5px; /* Réduit l'espace entre les blocs de liens */
+    width: 100%;
+  }
+  
+  .left {
+    .left {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .about-image {
+      width: 200px; /* Ajustez cette valeur pour agrandir l'image */
+      height: 200px; /* Assurez-vous que la hauteur est égale à la largeur */
+      object-fit: cover; /* Conserve les proportions de l'image et la rogne si nécessaire */
+      margin-bottom: 0px;
+      margin-top: 0px; 
+      margin-left: 285px;
+    }
+  }
+  
+  
+  
+  .right {
+    width: 100%; /* Prend toute la largeur */
+    margin-top: 20px;
+    padding: 0 0px; /* Ajoute un léger padding pour éviter que le texte touche les bords */
+    text-align: start; /* Centre le texte */
+  }
+
+  .aboutme h2 {
+    font-size: 25px;
+    position: relative;
+    display: inline-block; /* Assure que le titre ne s'étend pas trop large */
+    margin-bottom: 20px; /* Espace en dessous du titre */
+
+  }
+
+  .aboutme h2::after {
+    content: ""; /* Contenu vide pour l'élément pseudo */
+    display: block;
+    width: 50px; /* Longueur du trait */
+    height: 5px; /* Épaisseur du trait */
+    background-color: #4b0082; /* Couleur violette */
+    margin-top: 10px; /* Espace entre le titre et le trait */
+  }
+
+  .info-blocks p, .right p {
+    font-size: 17px; /* Réduit la taille de la police pour un meilleur ajustement */
+    line-height: 1.4; /* Réduit l'espacement entre les lignes */
+    margin: 0; /* Supprime les marges extérieures */
+    margin-bottom: 15px;
+  }
+
+  
+
+  .info-list {
+    list-style: none; /* Supprime les puces des éléments de la liste */
+    padding: 0; /* Supprime le padding par défaut */
+    margin: 0; /* Supprime les marges par défaut */
+    width: 100%; /* Prend toute la largeur de la page */
+    gap: 10px;
+  }
+  
+  .info-list li {
+    width: 100%;
+    display: flex; /* Utilise Flexbox pour aligner le logo et le texte */
+    align-items: center; /* Centre le contenu verticalement */
+    margin-bottom: 15px; /* Espace entre chaque élément de la liste */
+  }
+
+  
+  .info-list i {
+    flex-shrink: 0; /* Empêche le logo de se réduire */
+    margin-right: 10px; /* Ajoute un espace fixe à droite du logo */
+    width: 24px; /* Taille du cercle pour les icônes/logos */
+    height: 24px; /* Taille du cercle pour les icônes/logos */
+    border-radius: 50%; /* Crée un cercle autour de l'icône/logo */
+    background-color: #4b0082; /* Couleur de fond violette pour le cercle */
+    color: white; /* Couleur de l'icône/logo à l'intérieur du cercle */
+    display: flex; /* Pour centrer l'icône/logo dans le cercle */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    font-size: 17px; /* Taille de l'icône/logo */
+  }
+
+
+  .info-list a {
+    font-size: 17px; /* Réduit la taille du texte des liens */
+    color: #4b0082; /* Couleur violette des liens */
+    background: transparent;
+    display: flex; /* Pour aligner le logo avec le texte */
+    gap: 5px; /* Espace entre le logo et le texte */
+    white-space: nowrap; /* Empêche le texte de passer à la ligne */
+    text-align: left;
+    font-weight: normal; /* Assure que les liens ne sont pas en gras */
+    padding-right: -20px;
+  }
+
+  .info-list strong {
+    margin-right: 5px; /* Espace entre l'intitulé et le lien */
+    font-size: 17px; /* Réduit la taille de l'intitulé si nécessaire */
+  }
+
+  .underline a {
+    width: 100%; /* Prend toute la largeur */
+    padding: 0px;
+    display: flex; /* Utilise Flexbox pour aligner les éléments en ligne */
+    align-items: center; /* Centre verticalement les éléments */
+  }
+  
+  .underline i {
+    flex-shrink: 0; /* Empêche le logo de se rétrécir */
+    margin-right: 10px; /* Ajoute un espace fixe à droite du logo */
+  }
+  
+  #contact-link {
+    font-size: 17px;
+    display: inline-block;
+    border-color: #4b0082;
+    border-radius: 8px;
+    align-self: center;
+    background-color: transparent;  /* Supprime le fond */
+    border: 2px solid #4b0082; /* Bordure violette */
+    color: #4b0082; /* Couleur du texte violette */
+    padding: 10px 20px; /* Espacement interne */
+    border-radius: 20px; /* Angles arrondis */
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    margin-top: 20px;  /* Espacement supplémentaire en haut du bouton */
+    margin-left: 300px;
+  }
+  
+  /* Effet de survol pour le bouton "Contactez-moi" */
+  #contact-link:hover, #contact-link:hover a {
+    background-color: #4b0082; /* Fond violet au survol */
+    color: #f9dbfc; /* Texte blanc au survol */
+    text-decoration: none; /* Supprime le soulignement si c'est un lien */
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+}
+
+/* Pour les écrans larges */
+@media screen and (min-width: 1024px){
+  
+  .about-section {
+    display: flex;
+    flex-direction: column; /* Par défaut en colonne pour les petits écrans */
+    background-color: white;
+    color:#4b0082;
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+    min-height: 600px; /* Définit une hauteur minimale */
+  
+    /* Style global pour tous les liens */
+  a {
+    color: #4b0082; /* Couleur du texte violet */
+    background-color: transparent; /* Fond transparent */
+    text-decoration: none; /* Supprime le soulignement si vous ne le souhaitez pas */
+    font-weight: normal; /* Texte non gras */
+  }
+  
+  a:hover {
+    text-decoration: underline; /* Ajoute un soulignement au survol (optionnel) */
+  }
+  }
+  
+  /* Ou utilisez `gap` pour ajouter de l'espace entre les deux colonnes */
+  .about-content {
+    display: flex;
+    width: 100%;
+    gap: 300px; /* Ajustez la valeur pour augmenter l'espacement */
+    align-items: center;
+  }
+  
+  /* Style pour l'image à gauche */
+  .left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+   .about-image {
+    width: 500%;
+    max-width: 800px;
+    border-radius: 10px;
+    margin-bottom: -30px;
+    margin-top: -80px; 
+    margin-left: 200px;}
+  
+  
+  
+  /* Style pour le texte à droite */
+  .right {
+    flex: 2;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: -50px; 
+    padding-left: 10px; 
+  }
+  
+  
+  .right h2 {
+    font-size: 2em;
+    margin-left: 0; /* Aligne le texte à gauche (ou ajustez si besoin) */
+    position: relative; /* Nécessaire pour positionner le trait */
+  }
+  
+  /* Trait personnalisé avec le pseudo-élément */
+  .right h2::after {
+    content: ""; /* Crée un élément vide pour le trait */
+    display: block;
+    width: 30%; /* Réduit la largeur du trait de moitié */
+    height: 5px; /* Épaisseur du trait */
+    background-color: #4b0082; /* Couleur du trait */
+    margin-right: 20px; /* Centre le trait sous le texte */
+    margin-top: 10px; /* Espace entre le texte et le trait */
+  }
+  
+  
+  .right p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    margin-top: 0px;
+  }
+  
+  .aboutme {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligne le contenu à gauche */
+    justify-content: flex-start; /* Place le contenu en haut */
+    gap: 10px; /* Ajuste l'espacement entre le titre et le paragraphe */
+    margin-left: -185px; /* Déplace la div vers la gauche pour la rapprocher de l'image */
+  }
+  
+  /* Style pour la div contenant la liste de liens */
+  .info-blocks {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    align-items: flex-start;
+    margin-left: 0; 
+    width: auto; 
+    overflow: visible; 
+  }
+  
+  .info-blocks {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    margin-top: 30px;
+    margin-left: -70px; /* Déplace la div vers la gauche (ajustez la valeur selon vos besoins) */
+    justify-content: space-between; /* Répartit les blocs de manière uniforme */
+    align-items: flex-start; /* Aligne les éléments en haut */
+    
+  }
+  
+  .info-list {
+    list-style-type: none;
+    padding: 0; 
+  }
+  
+  /* Style pour les intitulés des liens */
+  .info-list strong {
+    font-size: 1.2em; /* Augmente la taille des intitulés */
+    font-weight: bold; /* Vous pouvez garder ou ajuster l'épaisseur du texte si nécessaire */
+  }
+  
+  /* Style pour les éléments de liste */
+  .info-list li {
+    margin: 0; /* Supprime les marges supplémentaires */
+    padding: 2px 0; /* Réduit l'espacement interne (vous pouvez ajuster cette valeur) */
+  }
+  
+  /* Style pour les liens dans les éléments de la liste */
+  .info-list a {
+    margin: 0.1; /* Supprime toute marge autour des liens */
+    padding: 0.1; /* Supprime tout padding autour des liens */
+    font-size: 1.2em; /* Même taille que les intitulés */
+    font-weight: normal; /* Texte non gras */
+    text-decoration: none; /* Supprime le soulignement si nécessaire */
+    color: #4b0082; /* Couleur violette pour les liens */
+  }
+  
+  /* Style pour les icônes devant les liens */
+  .info-list i {
+    margin-right: 8px; /* Espace de 8px entre l'icône et l'intitulé */
+    font-size: 1.2em; /* Ajuste la taille de l'icône si nécessaire */
+    display: inline-flex; /* Utilise inline-flex pour centrer l'icône */
+    justify-content: center; /* Centre l'icône horizontalement */
+    align-items: center; /* Centre l'icône verticalement */
+    width: 40px; /* Taille du cercle (ajustez selon la taille de l'icône) */
+    height: 40px; /* Taille du cercle (ajustez selon la taille de l'icône) */
+    border-radius: 50%; /* Rend les bords arrondis pour créer un cercle */
+    border: 2px solid #4b0082; /* Bordure violette autour de l'icône */
+    color: #4b0082; /* Couleur de l'icône */
+    font-size: 1.2em; /* Taille de l'icône */
+    margin-right: 8px; /* Espace entre l'icône et le texte */
+  }
+  
+  .underline a {
+      text-decoration: underline; /* Ajoute le soulignement */  
+  }
+  
+  /* Style du bouton "Contactez-moi" */
+  #contact-link {
+    font-size: 17px;
+    display: inline-block;
+    border-color: #4b0082;
+    border-radius: 8px;
+    align-self: center;
+    background-color: transparent;  /* Supprime le fond */
+    border: 2px solid #4b0082; /* Bordure violette */
+    color: #4b0082; /* Couleur du texte violette */
+    padding: 10px 20px; /* Espacement interne */
+    border-radius: 20px; /* Angles arrondis */
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    margin-top: 20px;  /* Espacement supplémentaire en haut du bouton */
+    margin-left: 300px;
+  }
+  
+  /* Effet de survol pour le bouton "Contactez-moi" */
+  #contact-link:hover, #contact-link:hover a {
+    background-color: #4b0082; /* Fond violet au survol */
+    color: #f9dbfc; /* Texte blanc au survol */
+    text-decoration: none; /* Supprime le soulignement si c'est un lien */
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+}
+
+/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+
+/* SECTION 2 */
+@media screen and (max-width: 767px){
+
+  /* Style général pour about-section2 */
+  .about-section2 {
+    padding: 20px; /* Ajuste l'espace intérieur */
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to right, #4b0082, #8a2be2); /* Fond violet pour toute la section */
+    color: #ffffff; /* Texte blanc */
+  }
+
+  /* Style pour les titres et paragraphes */
+  .about-section2 h2 {
+    color: #ffffff; /* Couleur du texte */
+    font-size: 25px;
+    margin-left: 0;
+  }
+
+  .about-section2 span {
+    color: #ffffff; /* Couleur du texte */
+    font-size: 18px;
+    margin-bottom: 10px; /* Ajoute un espace en dessous du <span> */
+  }
+
+  .about-section2 p {
+    color: #ffffff; /* Couleur du texte */
+    font-size: 18px;
+    margin-top: 10px; /* Ajoute un espace au-dessus du paragraphe */
+  }
+
+  #underline2{
+    margin-bottom: 20px;
+
+  }
+
+  /* Trait de soulignement personnalisé */
+  #underline2::after {
+    content: "";
+    display: block;
+    width: 50px; /* Largeur fixe du trait */
+    height: 4px; /* Épaisseur du trait */
+    background-color: #ffffff; /* Couleur du trait */
+    margin-top: 10px; /* Espace entre le texte et le trait */
+  }
+
+
+  /* Style pour les boîtes (box) */
+  .about-section2 .box {
+    background-color: transparent; /* Couleur de fond des encadrés */
+    color: #ffffff; /* Couleur du texte des encadrés */
+    border: 2px solid #ffffff;
+    border-radius: 8px; /* Angles arrondis */
+    padding: 15px; /* Espacement interne */
+    margin: 30px 0px; /* Espacement vertical entre les encadrés et marge latérale */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    font-size: 1.2em;
+  }
+
+  .titleParcours{
+    margin-top: 30px;
+
+  }
+
+  .exp h2{
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  .forma h2{
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  #contactMe {
+    margin-top: 10px;
+    margin-bottom: 50px;
+    margin-left: -20px;
+    padding: 10px 20px; /* Espace intérieur pour le bouton */
+    font-size: 17px; /* Taille de la police */
+    display: block; /* Active Flexbox */
+    justify-content: center; /* Centre le bouton horizontalement */
+    width: fit-content;
+    border: 2px solid #ffffff; /* Ajoute une bordure violette */
+    background-color: transparent; /* Supprime le fond violet */
+    color: #ffffff; /* Couleur violette du texte */
+    text-decoration: none; /* Supprime le soulignement */
+    font-weight: bold; /* Met le texte en gras si nécessaire */
+    display: inline-block; /* Affiche le bouton en ligne */
+    cursor: pointer; /* Affiche un curseur pointeur */
+    transition: all 0.3s ease; /* Ajoute une transition pour un effet fluide */
+    border-radius: 20px;
+  }
+  
+  #contactMe i {
+    margin-right: 10px;
+  }
+
+  /* Effet d'inversion de couleur lorsqu'on clique */
+  #contactMe:active {
+    background-color: #f9dbfc; /* Fond blanc lors du clic */
+    color: #4b0082; /* Texte violet lors du clic */
+  }
+}
+
+
+
+/* Pour les tablettes */
+@media screen and (min-width: 768px) and (max-width: 1024px){
+
+  /* Style général pour about-section2 */
+  .about-section2 {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to right, #4b0082, #8a2be2); /* Fond violet pour toute la section */
+    color: #ffffff; /* Texte blanc */
+    width: 100%; /* S'assure que la section occupe toute la largeur */
+  }
+
+  .about-section2.container-fluid {
+    padding-left: 40px; /* Ajustez la valeur selon vos préférences */
+    padding-right: 30px; /* Ajustez la valeur selon vos préférences */
+  }
+
+
+  /* Style pour les titres et paragraphes */
+  .about-section2 h2 {
+    color: #ffffff; /* Couleur du texte */
+    font-size: 25px;
+    margin-left: 0;
+  }
+
+  .about-section2 .exp h2 {
+    margin-top: 0px; /* Réduit l'espace au-dessus du titre "Expériences professionnelles" */
+    
+  }
+
+  .about-section2 span {
+    color: #ffffff; /* Couleur du texte */
+    font-size: 18px;
+    margin-bottom: 10px; /* Ajoute un espace en dessous du <span> */
+  }
+
+  .about-section2 p {
+    color: #ffffff; /* Couleur du texte */
+    font-size: 18px;
+    margin-top: 10px; /* Ajoute un espace au-dessus du paragraphe */
+  }
+
+  #underline2{
+    margin: 0;
+    margin-bottom: 20px;
+    margin-top: 50px;
+  }
+
+  /* Trait de soulignement personnalisé */
+  #underline2::after {
+    content: "";
+    display: block;
+    width: 50px; /* Largeur fixe du trait */
+    height: 4px; /* Épaisseur du trait */
+    background-color: #ffffff; /* Couleur du trait */
+    margin-top: 10px; /* Espace entre le texte et le trait */
+  }
+
+
+  /* Style pour les boîtes (box) */
+  .about-section2 .box {
+    background-color: transparent; /* Couleur de fond des encadrés */
+    color: #ffffff; /* Couleur du texte des encadrés */
+    border: 2px solid #ffffff;
+    border-radius: 8px; /* Angles arrondis */
+    padding: 15px; /* Espacement interne */
+    margin: 35px 0px; /* Espacement vertical entre les encadrés et marge latérale */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    font-size: 1.2em;
+  }
+
+  .box h2{
+    margin-bottom: 20px;
+  }
+
+  .forma{
+    margin-top: 100px;
+  }
+
+  .forma h2{
+    margin-top: 20px;
+  }
+
+  #contactMe {
+    margin-top: -50px;
+    margin-bottom: 75px;
+    padding: 10px 20px; /* Espace intérieur pour le bouton */
+    font-size: 16px; /* Taille de la police */
+    border: 2px solid #ffffff; /* Ajoute une bordure violette */
+    background-color: transparent; /* Supprime le fond violet */
+    color: #ffffff; /* Couleur violette du texte */
+    text-decoration: none; /* Supprime le soulignement */
+    font-weight: bold; /* Met le texte en gras si nécessaire */
+    display: inline-block; /* Affiche le bouton en ligne */
+    cursor: pointer; /* Affiche un curseur pointeur */
+    transition: all 0.3s ease; /* Ajoute une transition pour un effet fluide */
+    border-radius: 20px;
+  }
+
+  #contactMe i {
+    margin-right: 10px;
+  }
+
+  /* Effet d'inversion de couleur lorsqu'on clique */
+  #contactMe:active {
+    background-color: #f9dbfc; /* Fond blanc lors du clic */
+    color: #4b0082; /* Texte violet lors du clic */
+  }
+
+   /* Effet d'inversion de couleur lorsqu'on clique */
+   #contactMe:hover {
+    background-color: #f9dbfc; /* Fond blanc lors du clic */
+    color: #4b0082; /* Texte violet au survol */
+
+    a:hover {
+      background-color: #7b00d2;
+    }
+  }
+
+}
+
+
+/* Pour les écrans larges */
+@media screen and (min-width: 1024px){
+
+  /* Style général pour about-section2 */
+  .about-section2 {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to right, #4b0082, #8a2be2); /* Fond violet pour toute la section */
+    color: #ffffff; /* Texte blanc */
+    width: 100%; /* S'assure que la section occupe toute la largeur */
+  }
+
+  .about-section2.container-fluid {
+    padding-left: 40px; /* Ajustez la valeur selon vos préférences */
+    padding-right: 30px; /* Ajustez la valeur selon vos préférences */
+  }
+
+
+  /* Style pour les titres et paragraphes */
+  .about-section2 h2 {
+    color: #ffffff; /* Couleur du texte */
+    font-size: 25px;
+    margin-left: 0;
+  }
+
+  .about-section2 .exp h2 {
+    margin-top: 0px; /* Réduit l'espace au-dessus du titre "Expériences professionnelles" */
+    
+  }
+
+  .about-section2 span {
+    color: #ffffff; /* Couleur du texte */
+    font-size: 18px;
+    margin-bottom: 10px; /* Ajoute un espace en dessous du <span> */
+  }
+
+  .about-section2 p {
+    color: #ffffff; /* Couleur du texte */
+    font-size: 18px;
+    margin-top: 10px; /* Ajoute un espace au-dessus du paragraphe */
+  }
+
+  #underline2{
+    margin: 0;
+    margin-bottom: 20px;
+    margin-top: 50px;
+  }
+
+  /* Trait de soulignement personnalisé */
+  #underline2::after {
+    content: "";
+    display: block;
+    width: 50px; /* Largeur fixe du trait */
+    height: 4px; /* Épaisseur du trait */
+    background-color: #ffffff; /* Couleur du trait */
+    margin-top: 10px; /* Espace entre le texte et le trait */
+  }
+
+
+  /* Style pour les boîtes (box) */
+  .about-section2 .box {
+    background-color: transparent; /* Couleur de fond des encadrés */
+    color: #ffffff; /* Couleur du texte des encadrés */
+    border: 2px solid #ffffff;
+    border-radius: 8px; /* Angles arrondis */
+    padding: 15px; /* Espacement interne */
+    margin: 35px 0px; /* Espacement vertical entre les encadrés et marge latérale */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    font-size: 1.2em;
+  }
+
+  .box h2{
+    margin-bottom: 20px;
+  }
+
+  .forma{
+    margin-top: 100px;
+  }
+
+  .forma h2{
+    margin-top: 20px;
+  }
+
+  #contactMe {
+    margin-top: -50px;
+    margin-bottom: 75px;
+    padding: 10px 20px; /* Espace intérieur pour le bouton */
+    font-size: 16px; /* Taille de la police */
+    border: 2px solid #ffffff; /* Ajoute une bordure violette */
+    background-color: transparent; /* Supprime le fond violet */
+    color: #ffffff; /* Couleur violette du texte */
+    text-decoration: none; /* Supprime le soulignement */
+    font-weight: bold; /* Met le texte en gras si nécessaire */
+    display: inline-block; /* Affiche le bouton en ligne */
+    cursor: pointer; /* Affiche un curseur pointeur */
+    transition: all 0.3s ease; /* Ajoute une transition pour un effet fluide */
+    border-radius: 20px;
+  }
+
+  #contactMe i {
+    margin-right: 10px;
+  }
+
+  /* Effet d'inversion de couleur lorsqu'on clique */
+  #contactMe:hover {
+    background-color: #f9dbfc; /* Fond blanc lors du clic */
+    color: #4b0082; /* Texte violet au survol */
+
+    a:hover {
+      background-color: #7b00d2;
+    }
+  }
+
+}/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+
+/* SECTION 3 */
+
+/* Applique une bordure et une ombre légère aux articles */
+.project-article {
+  border: 1px solid #ddd;
+  
+}
+
+/* Arrondi les bordures des icônes de compétences */
+.icon.rounded-border {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid #4b0082;
+  border-radius: 50px;
+  font-size: 0.9em;
+  color: transparent;
+  background-color: #ffffff;
+}
+
+@media screen and (max-width: 767px){
+
+  .col-12, .col-md-6 {
+    padding-left: 15px; /* Ajoute de l'espace à gauche */
+    padding-right: 15px; /* Ajoute de l'espace à droite */
+    margin-left: auto; /* Centrer les colonnes */
+    margin-right: auto;
+    margin-top: 15px;
+  }
+
+  .container {
+    padding-left: 20px; /* Espacement global gauche */
+    padding-right: 20px; /* Espacement global droite */
+  }
+
+  .row {
+    margin-left: -10px; /* Ajuste les rangées */
+    margin-right: -10px;
+  }
+
+  .project-article img {
+    width: 100%;
+    height: 200px; /* Fixe la hauteur pour uniformiser */
+    object-fit: cover; /* Remplit le cadre en recadrant l'image */
+  }
+
+  .section-title {
+    font-size: 2rem; /* Taille du texte */
+    font-weight: bold; /* Texte en gras */
+    text-align: left; /* Aligne le texte à gauche */
+    position: relative; /* Nécessaire pour positionner la barre */
+    margin-top: 50px;
+    margin-bottom: 1rem; /* Espace en dessous */
+    color: #4b0082; /* Couleur du texte */
+  }
+
+  .section-title::after {
+    content: ""; /* Crée une barre sous le titre */
+    display: block;
+    width: 50px; /* Largeur de la barre (ajustez si nécessaire) */
+    height: 5px; /* Hauteur de la barre */
+    background-color: #4b0082; /* Couleur de la barre (ajustez si nécessaire) */
+    margin-top: 0.5rem; /* Espace entre le texte et la barre */
+    position: absolute;
+    left: 0; /* Aligne la barre avec le texte */
+  }
+
+  .myProjects h2 {
+    font-size: 25px; /* Remplacez par la taille utilisée dans "about-section" */
+    color:#4b0082; /* Remplacez par la couleur utilisée dans "about-section" */
+  }
+
+  .myProjects p {
+    font-size: 17px; /* Remplacez par la taille utilisée dans "about-section" */
+    color: #4b0082; /* Remplacez par la couleur utilisée dans "about-section" */
+  }
+
+  .project-article {
+    width: 100%;
+    margin: 0;
+    border-radius: 15px; /* Définit des bords arrondis (ajustez la valeur selon vos besoins) */
+    overflow: hidden; /* Assure que le contenu interne respecte les bords arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optionnel : ajoute une ombre pour un effet esthétique */
+    text-align: center;
+  }
+
+  .project-article h3 {
+    color: #4b0082; /* Violet */
+    font-size: 25px; /* Taille du texte */
+    font-weight: bold; /* Texte en gras */
+    text-align: left; /* Aligne le texte à gauche */
+    position: relative; /* Nécessaire pour positionner la barre */
+    padding: 20px;
+  }
+
+  .project-article h3::after {
+    content: ""; /* Crée une barre sous le titre */
+    display: block;
+    width: 50px; /* Largeur de la barre (ajustez si nécessaire) */
+    height: 5px; /* Hauteur de la barre */
+    background-color: #4b0082; /* Couleur de la barre (ajustez si nécessaire) */
+    margin-top: 10px; /* Espace entre le texte et la barre */
+    position: absolute;
+    left: 0; /* Aligne la barre avec le texte */
+    margin-left: 20px;
+  }
+
+  .project-article p {
+    padding: 20px;
+    margin-top: -10px;
+    text-align: start;
+  }
+
+  .skills-icons {
+    color: #4b0082; /* Violet */
+    font-size: 1em; /* Ajuste la taille des logos si nécessaire */
+    display: inline-block; /* Garde le logo et le texte ensemble */
+    justify-content: space-around; /* Sépare les colonnes gauche et droite */
+    text-align: center;
+  }
+
+  .skills-icons i {
+    margin-right: 10px; /* Ajoute un espace de 10px entre l'icône et le texte */
+  }
+
+  .icon.rounded-border {
+    color: #4b0082; /* Texte et logo en violet */
+    border: 1px solid #4b0082; /* Bordure violette autour */
+    padding: 5px 10px; /* Ajoute un espace interne */
+    border-radius: 50px; /* Bord arrondi pour un look esthétique */
+    background-color: #ffffff; /* Optionnel : fond clair */
+  }
+  
+  .left-icons, .right-icons {
+    display: flex; /* Crée une flexbox pour chaque colonne */
+    flex-direction: column; /* Dispose les icônes verticalement */
+    gap: 10px; /* Espace entre les icônes */
+  }
+
+  .project-article a {
+    width: 90%;
+    background: transparent;
+    display: inline-block; /* Pour gérer l'espacement et centrer facilement si besoin */
+    padding: 10px;
+    margin-top: 40px; /* Ajoute une marge en haut pour espacer */
+    margin-bottom: 40px;
+    text-decoration: none; /* Enlève le soulignement par défaut */
+    color: #4b0082; /* Couleur violette pour le texte du bouton */
+    border: 1px solid #4b0082;
+    border-radius: 10px;
+    
+  }
+
+  .btnRealisation a {
+    background: transparent;
+    display: inline-block; /* Pour gérer l'espacement et centrer facilement si besoin */
+    padding: 10px;
+    margin-bottom: 40px;
+    text-decoration: none; /* Enlève le soulignement par défaut */
+    color: #4b0082; /* Couleur violette pour le texte du bouton */
+    border: 1px solid #4b0082;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out; /* Ajoute une transition pour un effet fluide */
+  }
+
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px){
+  .col-12, .col-md-6 {
+    padding-left: 15px; /* Ajoute de l'espace à gauche */
+    padding-right: 15px; /* Ajoute de l'espace à droite */
+    margin-left: auto; /* Centrer les colonnes */
+    margin-right: auto;
+    margin-top: 15px
+  }
+
+  .container {
+    padding-left: 20px; /* Espacement global gauche */
+    padding-right: 20px; /* Espacement global droite */
+  }
+
+  .row {
+    margin-left: -10px; /* Ajuste les rangées */
+    margin-right: -10px;
+  }
+
+  .project-article img {
+    width: 100%;
+    height: 200px; /* Fixe la hauteur pour uniformiser */
+    object-fit: cover; /* Remplit le cadre en recadrant l'image */
+  }
+
+  .section-title {
+    font-size: 2rem; /* Taille du texte */
+    font-weight: bold; /* Texte en gras */
+    text-align: left; /* Aligne le texte à gauche */
+    position: relative; /* Nécessaire pour positionner la barre */
+    margin-top: 50px;
+    margin-bottom: 1rem; /* Espace en dessous */
+    color: #4b0082; /* Couleur du texte */
+  }
+
+  .section-title::after {
+    content: ""; /* Crée une barre sous le titre */
+    display: block;
+    width: 50px; /* Largeur de la barre (ajustez si nécessaire) */
+    height: 5px; /* Hauteur de la barre */
+    background-color: #4b0082; /* Couleur de la barre (ajustez si nécessaire) */
+    margin-top: 10px; /* Espace entre le texte et la barre */
+    position: absolute;
+    left: 0; /* Aligne la barre avec le texte */
+  }
+
+  .myProjects h2 {
+    font-size: 25px; /* Remplacez par la taille utilisée dans "about-section" */
+    color:#4b0082; /* Remplacez par la couleur utilisée dans "about-section" */
+  }
+
+  .myProjects p {
+    font-size: 17px; /* Remplacez par la taille utilisée dans "about-section" */
+    color: #4b0082; /* Remplacez par la couleur utilisée dans "about-section" */
+  }
+
+  .project-article {
+    width: 100%;
+    margin: 0;
+    border-radius: 15px; /* Définit des bords arrondis (ajustez la valeur selon vos besoins) */
+    overflow: hidden; /* Assure que le contenu interne respecte les bords arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optionnel : ajoute une ombre pour un effet esthétique */
+    text-align: center;
+  }
+
+  .project-article h3 {
+    color: #4b0082; /* Violet */
+    font-size: 25px; /* Taille du texte */
+    font-weight: bold; /* Texte en gras */
+    text-align: left; /* Aligne le texte à gauche */
+    position: relative; /* Nécessaire pour positionner la barre */
+    padding: 20px;
+  }
+
+  .project-article h3::after {
+    content: ""; /* Crée une barre sous le titre */
+    display: block;
+    width: 50px; /* Largeur de la barre (ajustez si nécessaire) */
+    height: 5px; /* Hauteur de la barre */
+    background-color: #4b0082; /* Couleur de la barre (ajustez si nécessaire) */
+    margin-top: 0.5rem; /* Espace entre le texte et la barre */
+    position: absolute;
+    left: 0; /* Aligne la barre avec le texte */
+    margin-left: 20px;
+  }
+
+  .project-article p {
+    padding: 20px;
+    margin-top: -10px;
+    text-align: start;
+  }
+
+  .skills-icons {
+    color: #4b0082; /* Violet */
+    font-size: 1em; /* Ajuste la taille des logos si nécessaire */
+    display: inline-block; /* Garde le logo et le texte ensemble */
+    justify-content: space-around; /* Sépare les colonnes gauche et droite */
+    text-align: center;
+  }
+
+  .skills-icons i {
+    margin-right: 10px; /* Ajoute un espace de 10px entre l'icône et le texte */
+  }
+
+  .icon.rounded-border {
+    color: #4b0082; /* Texte et logo en violet */
+    border: 1px solid #4b0082; /* Bordure violette autour */
+    padding: 5px 10px; /* Ajoute un espace interne */
+    border-radius: 50px; /* Bord arrondi pour un look esthétique */
+    background-color: #ffffff; /* Optionnel : fond clair */
+  }
+  
+  .left-icons, .right-icons {
+    display: flex; /* Crée une flexbox pour chaque colonne */
+    flex-direction: column; /* Dispose les icônes verticalement */
+    gap: 10px; /* Espace entre les icônes */
+  }
+
+  .project-article a {
+    width: 90%;
+    background: transparent;
+    display: inline-block; /* Pour gérer l'espacement et centrer facilement si besoin */
+    padding: 10px;
+    margin-top: 40px; /* Ajoute une marge en haut pour espacer */
+    margin-bottom: 40px;
+    text-decoration: none; /* Enlève le soulignement par défaut */
+    color: #4b0082; /* Couleur violette pour le texte du bouton */
+    border: 1px solid #4b0082;
+    border-radius: 10px;
+    
+  }
+
+  .btnRealisation a{
+    background: transparent;
+    display: inline-block; /* Pour gérer l'espacement et centrer facilement si besoin */
+    padding: 10px;
+    margin-bottom: 40px;
+    text-decoration: none; /* Enlève le soulignement par défaut */
+    color: #4b0082; /* Couleur violette pour le texte du bouton */
+    border: 1px solid #4b0082;
+    border-radius: 10px;
+
+  }
+
+}
+
+@media screen and (min-width: 1024px){
+
+  .myProjects.full-width {
+    width: 100vw; /* 100% de la largeur de la fenêtre */
+    max-width: 100vw; /* Supprime toute limitation de largeur */
+    margin-left: 0; /* Supprime les marges ajoutées par le framework */
+    margin-right: 0; /* Supprime les marges ajoutées par le framework */
+    padding-left: 30px; /* Facultatif : supprime le padding interne gauche */
+    padding-right: 30px; /* Facultatif : supprime le padding interne droit */
+  }
+
+  .col-12, .col-md-6 {
+    padding-left: 15px; /* Ajoute de l'espace à gauche */
+    padding-right: 15px; /* Ajoute de l'espace à droite */
+    margin-left: auto; /* Centrer les colonnes */
+    margin-right: auto;
+    margin-top: 15px
+  }
+
+  .container {
+    padding-left: 10px; /* Espacement global gauche */
+    padding-right: 10px; /* Espacement global droite */
+  }
+
+  .row {
+    margin-left: -10px; /* Ajuste les rangées */
+    margin-right: -10px;
+  }
+
+  .project-article img {
+    width: 100%;
+    height: 200px; /* Fixe la hauteur pour uniformiser */
+    object-fit: cover; /* Remplit le cadre en recadrant l'image */
+  }
+
+  .section-title {
+    font-size: 2rem; /* Taille du texte */
+    font-weight: bold; /* Texte en gras */
+    text-align: left; /* Aligne le texte à gauche */
+    position: relative; /* Nécessaire pour positionner la barre */
+    margin-top: 50px;
+    margin-bottom: 1rem; /* Espace en dessous */
+    color: #4b0082; /* Couleur du texte */
+  }
+
+  .section-title::after {
+    content: ""; /* Crée une barre sous le titre */
+    display: block;
+    width: 50px; /* Largeur de la barre (ajustez si nécessaire) */
+    height: 5px; /* Hauteur de la barre */
+    background-color: #4b0082; /* Couleur de la barre (ajustez si nécessaire) */
+    margin-top: 10px; /* Espace entre le texte et la barre */
+    position: absolute;
+    left: 0; /* Aligne la barre avec le texte */
+  }
+
+  .myProjects h2 {
+    font-size: 25px; /* Remplacez par la taille utilisée dans "about-section" */
+    color:#4b0082; /* Remplacez par la couleur utilisée dans "about-section" */
+  }
+
+  .myProjects p {
+    font-size: 17px; /* Remplacez par la taille utilisée dans "about-section" */
+    color: #4b0082; /* Remplacez par la couleur utilisée dans "about-section" */
+  }
+
+  .project-article {
+    width: 100%;
+    margin: 0;
+    border-radius: 15px; /* Définit des bords arrondis (ajustez la valeur selon vos besoins) */
+    overflow: hidden; /* Assure que le contenu interne respecte les bords arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optionnel : ajoute une ombre pour un effet esthétique */
+    text-align: center;
+  }
+
+  .project-article h3 {
+    color: #4b0082; /* Violet */
+    font-size: 25px; /* Taille du texte */
+    font-weight: bold; /* Texte en gras */
+    text-align: left; /* Aligne le texte à gauche */
+    position: relative; /* Nécessaire pour positionner la barre */
+    padding: 20px;
+  }
+
+  .project-article h3::after {
+    content: ""; /* Crée une barre sous le titre */
+    display: block;
+    width: 50px; /* Largeur de la barre (ajustez si nécessaire) */
+    height: 5px; /* Hauteur de la barre */
+    background-color: #4b0082; /* Couleur de la barre (ajustez si nécessaire) */
+    margin-top: 10px; /* Espace entre le texte et la barre */
+    position: absolute;
+    left: 0; /* Aligne la barre avec le texte */
+    margin-left: 20px;
+  }
+
+  .project-article p {
+    padding: 20px;
+    margin-top: -10px;
+    text-align: start;
+  }
+
+  .skills-icons {
+    color: #4b0082; /* Violet */
+    font-size: 1.5em; /* Ajuste la taille des logos si nécessaire */
+    display: inline-block; /* Garde le logo et le texte ensemble */
+    justify-content: space-evenly; /* Sépare les colonnes gauche et droite */
+    text-align: center;
+  }
+
+  .skills-icons i {
+    margin-right: 10px; /* Ajoute un espace de 10px entre l'icône et le texte */
+  }
+
+  .icon.rounded-border {
+    color: #4b0082; /* Texte et logo en violet */
+    border: 1px solid #4b0082; /* Bordure violette autour */
+    padding: 10px 60px; /* Ajoute un espace interne */
+    border-radius: 50px; /* Bord arrondi pour un look esthétique */
+    background-color: #ffffff; /* Optionnel : fond clair */
+  }
+  
+  .left-icons, .right-icons {
+    display: flex; /* Crée une flexbox pour chaque colonne */
+    flex-direction: column; /* Dispose les icônes verticalement */
+    gap: 10px; /* Espace entre les icônes */
+  }
+
+  .project-article a {
+    width: 90%;
+    background: transparent;
+    display: inline-block; /* Pour gérer l'espacement et centrer facilement si besoin */
+    padding: 10px;
+    margin-top: 40px; /* Ajoute une marge en haut pour espacer */
+    margin-bottom: 40px;
+    text-decoration: none; /* Enlève le soulignement par défaut */
+    color: #4b0082; /* Couleur violette pour le texte du bouton */
+    border: 1px solid #4b0082;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out; /* Transition fluide */
+  }
+
+  .btnRealisation a {
+    background: transparent;
+    display: inline-block; /* Pour gérer l'espacement et centrer facilement si besoin */
+    padding: 10px;
+    margin-bottom: 40px;
+    text-decoration: none; /* Enlève le soulignement par défaut */
+    color: #4b0082; /* Couleur violette pour le texte du bouton */
+    border: 1px solid #4b0082;
+    border-radius: 10px;
+
+  }
+
+  /* Effet hover */
+  .btnProject a:hover,
+  .btnRealisation a:hover {
+    background-color: #4b0082; /* Fond violet au survol */
+    color: #f9dbfc; /* Texte rose clair au survol */
+    border-color: #4b0082; /* Bordure violette au survol */
+  }
+  
+
+}
+
+/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+
+/* SECTION 4 */
+
+.contact-form-section {
+  background: linear-gradient(to right, #4b0082, #8a2be2); /* Dégradé violet */
+  color: #ffffff; /* Texte blanc pour le contraste */
+  padding: 50px 15px; /* Espacement interne */
+  margin: 0; /* Supprime les marges externes */
+
+}
+
+@media screen and (max-width: 767px){
+  /* Section avec un fond violet */
+  .contact-form-section {
+    background: linear-gradient(to right, #4b0082, #8a2be2); /* Dégradé violet */
+    color: #ffffff; /* Texte blanc pour le contraste */
+    padding: 50px 15px; /* Espacement interne */
+    margin: 0; /* Supprime les marges externes */
+  }
+  
+  /* Conteneur du formulaire */
+  .form-container {
+    max-width: 1200px; /* Largeur maximale pour éviter que le formulaire soit trop large */
+    margin: 0 auto; /* Centrage horizontal */
+    padding: 20px;
+  }
+  
+  /* Style général pour les titres */
+  .contact-form-section h2 {
+    font-size: 25px; /* Taille du texte */
+    font-weight: bold; /* Texte en gras */
+    text-align: left; /* Aligne le texte à gauche */
+    position: relative; /* Nécessaire pour positionner la barre */
+    margin-bottom: 0px; /* Espace en dessous */
+    color: #ffffff; /* Couleur du texte */
+  }
+  
+  .contact-form-section h2::after{
+    content: ""; /* Crée une barre sous le titre */
+    display: block;
+    width: 50px; /* Largeur de la barre (ajustez si nécessaire) */
+    height: 5px; /* Hauteur de la barre */
+    background-color: #ffffff; /* Couleur de la barre (ajustez si nécessaire) */
+    margin-top: 10px; /* Espace entre le texte et la barre */
+    position: absolute;
+    left: 0; /* Aligne la barre avec le texte */
+  }
+  
+  /* Texte descriptif */
+  .contact-form-section p {
+    text-align: start;
+    font-size: 17px;
+    margin-top: 35px;
+    margin-bottom: 40px;
+  }
+  
+  /* Groupes de champs */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  /* Labels */
+  .form-group label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+  }
+  
+  /* Champs input et textarea */
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group textarea {
+    width: 100%; /* Prend toute la largeur disponible */
+    padding: 15px;
+    font-size: 1rem;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    background-color: #ffffff; /* Fond blanc pour contraste */
+    color: #4b0082; /* Texte violet */
+    box-sizing: border-box; /* Inclut padding et bordure dans la largeur totale */
+  }
+  
+  /* Textarea spécifique */
+  .form-group textarea {
+    height: 150px; /* Hauteur par défaut */
+    resize: vertical; /* Permet de redimensionner verticalement uniquement */
+  }
+  
+  /* Bouton d'envoi */
+  .button {
+    width: 100%; /* Prend toute la largeur */
+    padding: 15px;
+    font-size: 17px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffffff; /* Fond blanc */
+    color: #4b0082; /* Texte violet */
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Effet hover pour le bouton */
+  .button:hover {
+    background-color: #f0f0f0; /* Gris clair */
+  }
+}
+
+
+
+
+
+@media screen and (min-width: 768px) and (max-width: 1024px){
+  .contact-form-section {
+    background: linear-gradient(to right, #4b0082, #8a2be2); /* Dégradé violet */
+    color: #ffffff; /* Texte blanc pour le contraste */
+    padding: 50px 15px; /* Espacement interne */
+    margin: 0; /* Supprime les marges externes */
+  }
+  
+  /* Conteneur du formulaire */
+  .form-container {
+    max-width: 1200px; /* Largeur maximale pour éviter que le formulaire soit trop large */
+    margin: 0 auto; /* Centrage horizontal */
+    padding: 20px;
+  }
+  
+  /* Style général pour les titres */
+  .contact-form-section h2 {
+    font-size: 25px; /* Taille du texte */
+    font-weight: bold; /* Texte en gras */
+    text-align: left; /* Aligne le texte à gauche */
+    position: relative; /* Nécessaire pour positionner la barre */
+    margin-bottom: 0px; /* Espace en dessous */
+    color: #ffffff; /* Couleur du texte */
+  }
+  
+  .contact-form-section h2::after{
+    content: ""; /* Crée une barre sous le titre */
+    display: block;
+    width: 50px; /* Largeur de la barre (ajustez si nécessaire) */
+    height: 5px; /* Hauteur de la barre */
+    background-color: #ffffff; /* Couleur de la barre (ajustez si nécessaire) */
+    margin-top: 10px; /* Espace entre le texte et la barre */
+    position: absolute;
+    left: 0; /* Aligne la barre avec le texte */
+  }
+  
+  /* Texte descriptif */
+  .contact-form-section p {
+    text-align: start;
+    font-size: 17px;
+    margin-top: 35px;
+    margin-bottom: 40px;
+  }
+  
+  /* Groupes de champs */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  /* Labels */
+  .form-group label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+  }
+  
+  /* Champs input et textarea */
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group textarea {
+    width: 100%; /* Prend toute la largeur disponible */
+    padding: 15px;
+    font-size: 1rem;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    background-color: #ffffff; /* Fond blanc pour contraste */
+    color: #4b0082; /* Texte violet */
+    box-sizing: border-box; /* Inclut padding et bordure dans la largeur totale */
+  }
+  
+  /* Textarea spécifique */
+  .form-group textarea {
+    height: 150px; /* Hauteur par défaut */
+    resize: vertical; /* Permet de redimensionner verticalement uniquement */
+  }
+
+  /* Conteneur parent pour les champs alignés */
+  .form-row {
+    display: flex; /* Active Flexbox */
+    gap: 20px; /* Espacement entre les colonnes */
+    margin-bottom: 20px; /* Espacement avec les autres lignes */
+  }
+
+  /* Les champs individuels dans la ligne */
+  .form-row .form-group {
+    flex: 1; /* Les champs prennent une largeur égale */
+    margin-bottom: 0; /* Supprime les marges inutiles */
+  }
+  
+  /* Bouton d'envoi */
+  .button {
+    width: 20%; /* Prend toute la largeur */
+    padding: 15px;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffffff; /* Fond blanc */
+    color: #4b0082; /* Texte violet */
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Effet hover pour le bouton */
+  .button:hover {
+    background-color: #f0f0f0; /* Gris clair */
+  }
+
+}
+
+
+
+@media screen and (min-width: 1024px){
+  .contact-form-section {
+    background: linear-gradient(to right, #4b0082, #8a2be2); /* Dégradé violet */
+    color: #ffffff; /* Texte blanc pour le contraste */
+    padding: 50px 15px; /* Espacement interne */
+    margin: 0; /* Supprime les marges externes */
+  }
+  
+  /* Conteneur du formulaire */
+  .form-container {
+    margin: 0 auto; /* Centrage horizontal */
+    padding: 20px;
+  }
+  
+  /* Style général pour les titres */
+  .contact-form-section h2 {
+    font-size: 25px; /* Taille du texte */
+    font-weight: bold; /* Texte en gras */
+    text-align: left; /* Aligne le texte à gauche */
+    position: relative; /* Nécessaire pour positionner la barre */
+    margin-bottom: 0px; /* Espace en dessous */
+    color: #ffffff; /* Couleur du texte */
+  }
+  
+  .contact-form-section h2::after{
+    content: ""; /* Crée une barre sous le titre */
+    display: block;
+    width: 50px; /* Largeur de la barre (ajustez si nécessaire) */
+    height: 5px; /* Hauteur de la barre */
+    background-color: #ffffff; /* Couleur de la barre (ajustez si nécessaire) */
+    margin-top: 10px; /* Espace entre le texte et la barre */
+    position: absolute;
+    left: 0; /* Aligne la barre avec le texte */
+  }
+  
+  /* Texte descriptif */
+  .contact-form-section p {
+    text-align: start;
+    font-size: 17px;
+    margin-top: 35px;
+    margin-bottom: 40px;
+  }
+  
+  /* Groupes de champs */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  /* Labels */
+  .form-group label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+  }
+  
+  /* Champs input et textarea */
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group textarea {
+    width: 100%; /* Prend toute la largeur disponible */
+    padding: 15px;
+    font-size: 1rem;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    background-color: #ffffff; /* Fond blanc pour contraste */
+    color: #4b0082; /* Texte violet */
+    box-sizing: border-box; /* Inclut padding et bordure dans la largeur totale */
+  }
+  
+  /* Textarea spécifique */
+  .form-group textarea {
+    height: 150px; /* Hauteur par défaut */
+    resize: vertical; /* Permet de redimensionner verticalement uniquement */
+  }
+
+  /* Conteneur parent pour les champs alignés */
+  .form-row {
+    display: flex; /* Active Flexbox */
+    gap: 20px; /* Espacement entre les colonnes */
+    margin-bottom: 20px; /* Espacement avec les autres lignes */
+  }
+
+  /* Les champs individuels dans la ligne */
+  .form-row .form-group {
+    flex: 1; /* Les champs prennent une largeur égale */
+    margin-bottom: 0; /* Supprime les marges inutiles */
+  }
+  
+  /* Bouton d'envoi */
+  .button {
+    width: 20%; /* Prend toute la largeur */
+    padding: 15px;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffffff; /* Fond blanc */
+    color: #4b0082; /* Texte violet */
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Effet hover pour le bouton */
+  .button:hover {
+    background-color: #f0f0f0; /* Gris clair */
+  }
+}
