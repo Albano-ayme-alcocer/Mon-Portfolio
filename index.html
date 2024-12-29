@@ -1,32 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="BOOTSTRAP/BootStrap/bootstrap.min.css">
-    <link rel="stylesheet" href="CSS/style.css">
-    <script src="https://kit.fontawesome.com/83dfd2be60.js" crossorigin="anonymous"></script>
-
-    <title>Portfolio Développeur Full-Stack Junior</title>
-
-</head>
-
-<body>
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="BOOTSTRAP/BootStrap/bootstrap.min.css">
+        <link rel="stylesheet" href="CSS/style.css">
+        
+        <title>Portfolio Développeur Full-Stack Junior</title>
+        
+    </head>
+    
+    <body>
 
     <header>
         <nav class="navbar">
             <div class="logo">
-                <div>
-                    <img src="IMG/Mon_Logo.svg" alt="Logo">
-                </div>
+                <img src="IMG/Mon_Logo.svg" alt="Logo">
             </div>
-            <div class="center-icon">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-            <div class="burger">
-                <ul class="nav-links">
+            
+            <button class="burger-menu" aria-label="Toggle navigation">
+                ☰
+            </button>
+            
+            <div class="myLinks">
+                <ul class="nav-links" class="active">
                     <li><a href="#home"><i class="fa-sharp-duotone fa-solid fa-house"></i></a></li>
                     <li><a href="#about">À propos</a></li>
                     <li><a href="#parcours">Parcours</a></li>
@@ -35,7 +34,7 @@
                 </ul>
             </div>
         </nav>
-        <section class="header-section">
+        <section id="home" class="header-section">
             <div class="content">
                 <br>
                 <br>
@@ -43,16 +42,17 @@
                 <br>
                 <h1><span>Albano</span> <span>Aymé</span></h1>
                 <h2>Développeur Web / Web Mobile Junior</h2>
-                <p>Je suis actuellement à la recherche d'un emploi, impatient de concrétiser mes compétences dans un
+                <p>Je suis actuellement à la recherche d'un stage dans la programmation web, impatient de mettre en
+                    application mes compétences dans un
                     nouveau défi professionnel.</p>
-                <div>
-                    <a id="monCV" href="cv.pdf" download>Télécharger mon CV</a>
+                    <div>
+                        <a id="monCV" href="IMG/CV25.pdf" target="_blank">Télécharger mon CV</a>
                 </div>
             </div>
         </section>
     </header>
-
-    <section class="about-section">
+    
+    <section id="about" class="about-section">
         <div class="about-content">
             <div class="left">
                 <img src="IMG/Moi.png" alt="Photo de moi" class="about-image">
@@ -60,119 +60,131 @@
             <div class="right">
                 <div class="aboutme">
                     <h2>A propos de moi</h2>
+                    
+                    <p>En reconversion professionnelle en formation Développeur Web, passionné par la création de
+                        solutions numériques
+                        innovantes. Je recherche un stage pour mettre en pratique les compétences acquises en
+                        développement front-end et back-end, et contribuer activement aux projets d'une équipe
+                        dynamique.
+                    </p>
+                    <div class="info-blocks">
+                        <ul class="info-list">
+                            <li class="underline">
+                                <i class="fa-sharp-duotone fa-solid fa-envelope"></i><strong>Mail:</strong>
+                                <a href="mailto:albano.smartphone@gmail.com"> albano.smartphone@gmail.com</a>
+                            </li>
 
-                    <p>Passionné par le développement web, j'ai acquis une solide autonomie grâce à ma motivation et ma
-                        pratique
-                        assidue, renforçant ainsi mes compétences pour résoudre efficacement des problèmes divers lors
-                        de
-                        projets variés.</p>
+                            <li class="underline"><i class="fab fa-github"></i><strong>GitHub:</strong>
+                                <a href="https://github.com/Albano-ayme-alcocer"> Albano-ayme-alcocer</a>
+                            </li>
+                            
+                            <li><i class="fa-solid fa-cake-candles"></i><strong>Âge:<span class="normal-text"> 37
+                                ans</span></strong></li>
+                            </ul>
+                            
+                            <ul class="info-list">
+                            <li class="underline"><i class="fa-solid fa-phone"></i><strong>Téléphone:</strong><a
+                                    href="https://api.whatsapp.com/send?phone=33749412548" target="_blank">07.49.41.25.48</a></li>
+
+                            <li class="underline"><i class="fab fa-linkedin"></i><strong>LinkedIn:</strong>
+                                <a href="www.linkedin.com/in/albano-aymé"> Albano
+                                    Aymé</a>
+                            </li>
+
+                            <li><i class="fa-solid fa-city"></i><strong>Ville:<span class="normal-text"> Nice,
+                                06000</span></span></strong></li>
+                            </ul>
+                    </div>
                 </div>
-
-                <div class="info-blocks">
-                    <ul class="info-list">
-                        <li class="underline">
-                            <i class="fa-sharp-duotone fa-solid fa-envelope"></i><strong>Mail:</strong>
-                            <a href="mailto:albano.smartphone@gmail.com"> albano.smartphone@gmail.com</a>
-                        </li>
-
-                        <li class="underline"><i class="fab fa-github"></i><strong>GitHub:</strong>
-                            <a href="https://github.com/Albano-ayme-alcocer"> Albano-ayme-alcocer</a>
-                        </li>
-
-                        <li><i class="fa-solid fa-cake-candles"></i><strong>Âge:</strong> 37 ans</li>
-                    </ul>
-
-                    <ul class="info-list">
-                        <li class="underline"><i class="fab fa-whatsapp"></i><strong>WhatsApp:</strong><a
-                                href="https://wa.me/qr/T6XSQZZ2A3E7H1"> Mon QR
-                                Code</a></li>
-
-                        <li class="underline"><i class="fab fa-linkedin"></i><strong>LinkedIn:</strong>
-                            <a href="www.linkedin.com/in/albano-aymé"> Albano
-                                Aymé</a>
-                        </li>
-
-                        <li><i class="fa-solid fa-city"></i><strong>Ville:</strong> Nice, 06000</li>
-                    </ul>
+                <div class="contactMe">
+                    <a id="contact-link" href="#contact">Contactez-moi</a>
                 </div>
-                <div>
-                    <a id="contact-link" href="#contact">Contactez moi</a>
+            </div>
+        </div>
+    </section>
+    
+    <section id="parcours" class="about-section2 container-fluid">
+        <div class="section2Text">
+            <div class="titleParcours">
+                <h2 id="underline2">Mon Parcours</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="exp">
+                        <div>
+                            <h2>Expériences professionnelles</h2>
+                        </div>
+                        <div class="box">
+                            <h2>Stage chez ...</h2>
+                            <span><i>Avril - Mai 2025</i></span>
+                            <p> À la recherche d'un stage pour consolider ces acquis, je suis motivé à apporter
+                                mes compétences et mon enthousiasme à une équipe dynamique.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                    <div class="forma">
+                        <div>
+                            <h2>Formations</h2>
+                        </div>
+                        <div class="box">
+                            <h2>Développeur Web / Web Mobile - AFPA</h2>
+                            <span><i>Octobre 2024 - Juillet 2025</i></span>
+                            <p>Actuellement en formation intensive au sein de l'AFPA, je développe des compétences solides
+                                dans la conception, le développement et la maintenance de sites web et d'applications
+                                interactives. Ce parcours complet me permet d’acquérir une maîtrise des technologies
+                                front-end (HTML, CSS, JavaScript, frameworks comme React) et back-end (PHP, Symfony, et
+                                bases de données telles que SQL).
+    
+                                Je suis également formé aux bonnes pratiques de développement, telles que l’optimisation des
+                                performances, le respect des normes d’accessibilité et la gestion de projets collaboratifs
+                                en utilisant des outils comme GitHub.
+                                
+                                Cette formation met l'accent sur des projets pratiques et des cas concrets, me permettant de
+                                renforcer ma capacité à résoudre des problèmes techniques et à répondre aux attentes réelles
+                                du marché.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="row">
+                <div class="col-12 text-center mt-4">
+                    <a id="contactMe" href="https://api.whatsapp.com/send?phone=33749412548" target="_blank">
+                        <i class="fab fa-whatsapp"></i>Contactez moi
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="about-section2 container-fluid">
-        <div class="titleParcours">
-            <h2 id="underline2">Mon Parcours</h2>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="exp">
-                    <div>
-                        <h2>Expériences professionnelles</h2>
-                    </div>
-                    <div class="box">
-                        <h2>Stage chez ...</h2>
-                        <span>Avril - Mai 2025</span>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta optio, autem earum nemo sunt
-                            reprehenderit animi, expedita ipsum quisquam et, aperiam asperiores consequuntur non beatae
-                            laboriosam temporibus ratione repellat unde!</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 mb-4">
-                <div class="forma">
-                    <div>
-                        <h2>Formations</h2>
-                    </div>
-                    <div class="box">
-                        <h2>Développeur Web / Web Mobile</h2>
-                        <span>Octobre 2024 - Juillet 2025</span>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium ratione inventore
-                            aspernatur saepe vero modi doloremque, velit voluptates porro harum cum ipsa corporis ea.
-                            Reprehenderit culpa odio consequatur aliquam tenetur?</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="row">
-            <div class="col-12 text-center mt-4">
-                <a id="contactMe" href="https://wa.me/qr/T6XSQZZ2A3E7H1">
-                    <i class="fab fa-whatsapp"></i>Contactez moi
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section class="myProjects container full-width">
+    <section id="projets" class="myProjects container full-width">
         <div class="row">
             <div class="col-12">
                 <h2 class="section-title mb-4">Mes Projets</h2>
             </div>
-
-
+            
+            
             <div class="col-12 col-md-6 mb-4">
                 <article class="project-article shadow-sm">
                     <img src="IMG/Portfolio.jpg" alt="Projet 1" class="img-fluid mb-3">
                     <h3 class="text-left">Portfolio</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga optio at perferendis harum magnam
                         veritatis.</p>
-
-
-                    <div class="skills-icons d-flex">
-                        <div class="left-icons">
-                            <span class="icon rounded-border"><i class="fa-brands fa-symfony"></i>Symfony</span>
-                            <span class="icon rounded-border"><i class="fa-solid fa-database"></i>MySQL</span>
+                        
+                        
+                        <div class="skills-icons d-flex">
+                            <div class="left-icons">
+                                <span class="icon rounded-border"><i class="fa-brands fa-symfony"></i>Symfony</span>
+                                <span class="icon rounded-border"><i class="fa-solid fa-database"></i>MySQL</span>
+                            </div>
+                            <div class="right-icons">
+                                <span class="icon rounded-border"><i class="fa-brands fa-bootstrap"></i>Bootstrap</span>
+                                <span class="icon rounded-border"><i class="fa-brands fa-github"></i>GitHub</span>
+                            </div>
                         </div>
-                        <div class="right-icons">
-                            <span class="icon rounded-border"><i class="fa-brands fa-bootstrap"></i>Bootstrap</span>
-                            <span class="icon rounded-border"><i class="fa-brands fa-github"></i>GitHub</span>
-                        </div>
-                    </div>
 
 
                     <div class="btnProject">
@@ -180,15 +192,15 @@
                     </div>
                 </article>
             </div>
-
-
+            
+            
             <div class="col-12 col-md-6 mb-4">
                 <article class="project-article shadow-sm">
-                    <img src="IMG/E-commerce.png" alt="Projet 2" class="img-fluid mb-3">
+                    <img src="IMG/pexels-asphotograpy-230544.jpg" alt="Projet 2" class="img-fluid mb-3">
                     <h3 class="text-left">Site E-Commerce</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga optio at perferendis harum magnam
                         veritatis.</p>
-
+                        
                     <div class="skills-icons d-flex">
                         <div class="left-icons">
                             <span class="icon rounded-border"><i class="fa-brands fa-symfony"></i>Symfony</span>
@@ -205,7 +217,7 @@
                 </article>
             </div>
 
-
+            
         </div>
 
         <div class="btnRealisation text-center mt-4">
@@ -214,48 +226,51 @@
             </div>
         </div>
     </section>
-
-    <section class="contact-form-section">
+    
+    <section id="contact" class="contact-form-section">
         <div class="form-container">
             <h2>Contactez-moi</h2>
             <p>Tous les champs ci-dessous sont obligatoires</p>
             <form action="">
                 <!-- Aligner Nom et Email sur la même ligne -->
                 <div class="form-row">
-                  <div class="form-group">
-                    <label for="name">Nom</label>
-                    <input type="text" id="name" placeholder="Votre nom">
-                  </div>
-                  <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="Votre email">
-                  </div>
+                    <div class="form-group">
+                        <label for="name">Nom</label>
+                        <input type="text" id="name" placeholder="Votre nom">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Votre email">
+                    </div>
                 </div>
-              
+                
                 <!-- Champ Message sur une ligne distincte -->
                 <div class="form-group">
-                  <label for="message">Message</label>
-                  <textarea id="message" placeholder="Votre message"></textarea>
+                    <label for="message">Message</label>
+                    <textarea id="message" placeholder="Votre message"></textarea>
                 </div>
-              
+                
                 <!-- Bouton d'envoi -->
                 <div class="form-group">
-                  <input name="contact" class="button" type="submit" value="Envoyez votre message">
+                    <input name="contact" class="button" type="submit" value="Envoyez votre message">
                 </div>
-              </form>
+            </form>
         </div>
     </section>
 
-
+    
     <div>
         <footer>
-
-
+            
+            
         </footer>
     </div>
-
     
-
+    
+    
     <script src="JS/bootstrap.bundle.min.js"></script>
+    <script src="JS/app.js"></script>
+    <script src="https://kit.fontawesome.com/83dfd2be60.js" crossorigin="anonymous"></script>
 </body>
+
 </html>

@@ -16,7 +16,45 @@ body, html {
   }
 }
 
-/* Afficher l'icône burger uniquement sur les smartphones */
+section {
+  min-height: 100vh;
+  padding: 20px;
+  scroll-behavior: smooth; /* Active un défilement fluide */
+}
+
+.myLinks ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+}
+
+.myLinks ul li a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+}
+
+.myLinks ul li a:hover {
+  color: #f9dbfc; /* Changer la couleur au survol */
+}
+
+/* Menu Burger - Style par défaut */
+.burger-menu {
+  display: none; /* Masqué sur les grands écrans */
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Menu visible */
+.myLinks.active {
+  display: block;
+}
+
+/* Afficher l'icône myLinks uniquement sur les smartphones */
 @media screen and (max-width: 767px) {
 
   /* BAR DE NAVIGATION */
@@ -24,71 +62,73 @@ body, html {
     background-color: #7b00d2;
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Centre les éléments verticalement */
-    padding: 0 20px; /* Espace à gauche et à droite */
-    box-shadow: 0 4px 10px #ffffffb4; /* Ombre blanche subtile */
-    height: 100px; /* Ajustez la hauteur de la navbar selon vos préférences */
-    border-bottom: 2px solid white; /* Bordure fine blanche en bas */
-    position: fixed;            /* Fixe la barre en haut de l'écran */
-    top: 0;                     /* Place la barre en haut de la fenêtre */
+    align-items: center;
+    padding: 0 20px;
+    height: 100px;
+    position: fixed;
+    top: 0;
     left: 0;
     width: 100%;
-    background-color: #4b0082;  /* Couleur de fond de la barre */
-    z-index: 1000;              /* Assure que la barre est au-dessus des autres éléments */
- 
+    z-index: 1000;
   }
 
   /* Logo */
   .logo img {
     width: 50px;
-    margin-left: 20px; /* Ajustez la valeur pour le décaler à droite */
-    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.932); /* Ombre blanche */
-    border-radius: 30px; /* Arrondir l'angle en bas à droite */
+    margin-left: 20px;
+    border-radius: 30px;
   }
-
-  .burger {
-    display: block;
-  }
-
-
-  /* Masquer les liens sur petits écrans */
+  /* Nav-links (menu) */
   .nav-links {
-    display: none; /* Masque la liste de liens par défaut */
-    flex-direction: column; /* Aligne les liens verticalement */
-    position: absolute; /* Positionne la liste de liens de manière absolue */
-    top: 60px; /* Ajuste la position en fonction de la hauteur de la navbar */
-    right: 0;
-    background-color: #4b0082; /* Couleur de fond de la liste déroulante */
-    width: 100%; /* Prend toute la largeur de l'écran */
-    padding: 10px 0;
-    z-index: 1000; /* Assure que la liste apparaît au-dessus des autres éléments */
-  }
-  
-
-  /* Afficher les liens lorsque le menu burger est actif */
-  .nav-links.active {
-    display: flex;
-    flex-direction: column; /* Afficher les liens en colonne */
+    display: none; /* Masqué par défaut */
+    flex-direction: column;
     position: absolute;
     top: 70px;
     right: 0;
-    background-color: #4b0082;
-    width: 100%;
-    text-align: center;
-    padding: 10px;
+    background-color: #7b00d2;
+    width: 100%; /* Largeur par défaut, plein écran */
+    opacity: 0;
+    transform: translateX(100%); /* Complètement hors écran */
+    transition: opacity 0.3s ease, transform 0.3s ease, width 0.3s ease;
+    justify-content: center; /* Centre verticalement les enfants */
+    align-items: center; /* Centre horizontalement les enfants */
+    border: 2px solid white; /* Bordure blanche de 2px */
+    border-radius: 10px; /* Optionnel : arrondir les coins */
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2); /* Ombre subtile blanche */
   }
 
-  /* Ajuster l'icône burger */
-  .center-icon {
+  .nav-links.active {
     display: flex;
-    font-size: 30px;
-    cursor: pointer;
-    color: white;
-    margin-left: auto;
+    opacity: 1;
+    transform: translateX(0); /* Visible */
+    width: 50%; /* Réduit à 50% de la largeur de l'écran */
+    right: 0; /* Positionné sur le côté droit */
   }
 
+  /* Liens individuels */
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem; /* Taille de police ajustée */
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .burger-menu {
+    display: block; /* Affiche le bouton burger */
+    position: absolute; /* Permet de positionner précisément */
+    right: 20px; /* Décale le bouton à 20px du bord droit */
+    top: 50%; /* Aligne verticalement au centre (par rapport à la hauteur de la barre) */
+    transform: translateY(-50%); /* Ajuste pour centrer parfaitement */
+  }
   
+
 }
+
 
 
 /* Afficher les liens sur les tablettes */
@@ -137,7 +177,6 @@ body, html {
     border-bottom-right-radius: 50px; /* Arrondir l'angle en bas à droite */
     position: fixed;            /* Fixe la barre en haut de l'écran */
     width: 100%;
-    background-color: #4b0082;  /* Couleur de fond de la barre */
     z-index: 1000;              /* Assure que la barre est au-dessus des autres éléments */
     
   }
@@ -146,7 +185,7 @@ body, html {
   .logo img {
   display: flex;
   align-items: flex-start; /* Aligne les liens vers le haut */  
-  width: 50px;
+  width: 60px;
   margin-left: 5px; /* Ajustez la valeur pour le décaler à droite */
   box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.932); /* Ombre blanche */
   border-radius: 30px; /* Arrondir l'angle en bas à droite */
@@ -170,6 +209,10 @@ body, html {
     list-style: none;
     
   }
+
+  .burger {
+    font-size: 1.5em;
+  }
   
   .nav-links li {
     margin: 0 60px;
@@ -178,7 +221,6 @@ body, html {
   .nav-links a {
     color: white;
     text-decoration: none;
-    font-size: 15px;
     justify-content: center; /* Centrer les liens dans l'espace disponible */
   }
   
@@ -204,7 +246,6 @@ body, html {
     border-bottom-right-radius: 50px; /* Arrondir l'angle en bas à droite */
     position: fixed;            /* Fixe la barre en haut de l'écran */
     width: 100%;
-    background-color: #4b0082;  /* Couleur de fond de la barre */
     z-index: 1000;              /* Assure que la barre est au-dessus des autres éléments */
     
   }
@@ -213,8 +254,8 @@ body, html {
   .logo img {
   display: flex;
   align-items: flex-start; /* Aligne les liens vers le haut */  
-  width: 50px;
-  margin-left: 5px; /* Ajustez la valeur pour le décaler à droite */
+  width: 60px;
+  margin-left: 10px; /* Ajustez la valeur pour le décaler à droite */
   box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.932); /* Ombre blanche */
   border-radius: 30px; /* Arrondir l'angle en bas à droite */
   }
@@ -268,6 +309,7 @@ body, html {
   .header-section {
     min-height: 20vh;
     padding: 0px 10px;
+    scroll-margin-top: 100px; /* Ajustez selon la hauteur de votre navbar */
   }
   
 
@@ -387,6 +429,7 @@ body, html {
   .header-section {
     min-height: 50vh;
     padding: 50px 20px;
+    scroll-margin-top: 100px; /* Ajustez selon la hauteur de votre navbar */
   }
 
   /* Styles pour les titres et le texte */
@@ -471,91 +514,92 @@ body, html {
 /* Ajustement pour les écrans moyens et grands */
 @media screen and (min-width: 1024px) {
   
-    .background {
-      background-image: url('../IMG/background.svg'); /* L'image de fond */
-      background-size: cover; /* L'image couvre toute la surface */
-      background-position: center; /* Centrer l'image */
-      background-repeat: no-repeat; /* Ne pas répéter l'image */
-      width: 100%; /* Prend toute la largeur de l'élément */
-      height: 100vh; /* Prend toute la hauteur de l'écran */
-    }
-  
-    .header-section {
-      background-image: url('../IMG/background.svg'); /* L'image de fond */
-      background-size: cover; /* L'image couvre toute la largeur et la hauteur */
-      background-position: center; /* Centrer l'image */
-      background-repeat: no-repeat; /* Ne pas répéter l'image */
-      background-attachment: fixed; /* Fixe l'image pour un effet de parallaxe */
-      min-height: 100vh; /* Prend toute la hauteur de l'écran */
-      padding: 50px 20px; /* Espace autour du contenu */
-      box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); /* Ombre subtile */
-    }
-  
-    .content {
-      max-width: 1300px;
-      margin: 20px ; /* Centre horizontalement avec de l'espace en haut */
-      text-align: left; /* Garde le texte aligné à gauche */
-      padding: 20px; /* Espace autour du contenu */
-      color: white; /* Texte en blanc pour contraste */
-      box-sizing: border-box; /* Inclut le padding dans la largeur totale */
-    }
-  
-    /* Styles pour les titres et le texte */
-    .header-section h1 {
-      font-size: 8em; /* Ajuste la taille du titre */
-      font-weight: bold; /* Texte en gras */
-      margin-bottom: 40px; /* Espace sous le titre */
-    }
-  
-    .header-section h2 {
-      font-size: 4em; /* Taille du sous-titre */
-      font-weight: bold; /* Texte en gras */
-      margin-bottom: 30px; /* Espace sous le sous-titre */
-    }
-  
-    .header-section p {
-      font-size: 2em; /* Taille de police du paragraphe */
-      line-height: 1.6; /* Espacement entre les lignes pour une meilleure lisibilité */
-      margin-bottom: 30px; /* Espace sous le paragraphe */
-    }
-  
-    /* Styles pour le lien de téléchargement du CV */
-    .header-section a {
-      color: #fff;
-      background-color: transparent;
-      padding: 12px 24px;
-      text-decoration: none;
-      font-size: 2em;
-      font-weight: bold;
-      display: inline-block;
-      transition: background-color 0.3s;
-    }
-  
-    #monCV {
-      display: inline-block;
-      border-color: #4b0082;
-      border-radius: 20px;
-      margin-top: 20px;
-      border: 2px solid #ffffff;
-      color: #ffffff; /* Texte blanc par défaut */
-      padding: 10px 20px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-  
-    /* Effet de survol pour le bouton "Télécharger mon CV" */
-    #monCV:hover {
-      background-color: #f9dbfc; /* Fond blanc au survol */
-      color: #4b0082; /* Texte violet au survol */
-
-      a:hover {
-        background-color: #7b00d2;
-      }
-
-    }
-  
+  .background {
+    background-image: url('../IMG/background.svg'); /* L'image de fond */
+    background-size: cover; /* L'image couvre toute la surface */
+    background-position: center; /* Centrer l'image */
+    background-repeat: no-repeat; /* Ne pas répéter l'image */
+    width: 100%; /* Prend toute la largeur de l'élément */
+    height: 100vh; /* Prend toute la hauteur de l'écran */
   }
+
+  .header-section {
+    background-image: url('../IMG/background.svg'); /* L'image de fond */
+    background-size: cover; /* L'image couvre toute la largeur et la hauteur */
+    background-position: center; /* Centrer l'image */
+    background-repeat: no-repeat; /* Ne pas répéter l'image */
+    background-attachment: fixed; /* Fixe l'image pour un effet de parallaxe */
+    min-height: 100vh; /* Prend toute la hauteur de l'écran */
+    padding: 50px 20px; /* Espace autour du contenu */
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); /* Ombre subtile */
+    scroll-margin-top: 100px; /* Ajustez selon la hauteur de votre navbar */
+  }
+
+  .content {
+    max-width: 1300px;
+    margin: 20px ; /* Centre horizontalement avec de l'espace en haut */
+    text-align: left; /* Garde le texte aligné à gauche */
+    padding: 20px; /* Espace autour du contenu */
+    color: white; /* Texte en blanc pour contraste */
+    box-sizing: border-box; /* Inclut le padding dans la largeur totale */
+    
+  }
+
+ 
+  /* Styles pour les titres et le texte */
+  .header-section h1 {
+    font-size: 8em; /* Ajuste la taille du titre */
+    font-weight: bold; /* Texte en gras */
+    margin-bottom: 40px; /* Espace sous le titre */
+  }
+
+  .header-section h2 {
+    font-size: 4em; /* Taille du sous-titre */
+    font-weight: bold; /* Texte en gras */
+    margin-bottom: 30px; /* Espace sous le sous-titre */
+  }
+
+  .header-section p {
+    font-size: 2em; /* Taille de police du paragraphe */
+    line-height: 1.6; /* Espacement entre les lignes pour une meilleure lisibilité */
+    margin-bottom: 30px; /* Espace sous le paragraphe */
+  }
+
+  /* Styles pour le lien de téléchargement du CV */
+  .header-section a {
+    color: #fff;
+    background-color: transparent;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-size: 2em;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.3s;
+  }
+
+  #monCV {
+    display: inline-block;
+    border-color: #4b0082;
+    border-radius: 20px;
+    margin-top: 20px;
+    border: 2px solid #ffffff;
+    color: #ffffff; /* Texte blanc par défaut */
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Effet de survol pour le bouton "Télécharger mon CV" */
+  #monCV:hover {
+    background-color: #f9dbfc; /* Fond blanc au survol */
+    color: #4b0082; /* Texte violet au survol */
+    a:hover {
+      background-color: #7b00d2;
+    }
+  }
+  
+}
 
 /**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
 /**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
@@ -570,6 +614,7 @@ body, html {
     align-items: flex-start; /* Aligne les éléments sur la gauche */
     padding: 20px 10px; /* Ajoute du padding pour les smartphones */
     padding-bottom: 50px;
+    scroll-margin-top: 100px; /* Ajustez selon la hauteur de votre navbar */
   }
   
   .about-content{
@@ -749,6 +794,7 @@ body, html {
     align-items: flex-start; /* Aligne les éléments sur la gauche */
     padding: 20px 10px; /* Ajoute du padding pour les smartphones */
     padding-bottom: 50px;
+    scroll-margin-top: 100px; /* Ajustez selon la hauteur de votre navbar */
   }
   
   .about-content{
@@ -789,7 +835,7 @@ body, html {
       object-fit: cover; /* Conserve les proportions de l'image et la rogne si nécessaire */
       margin-bottom: 0px;
       margin-top: 0px; 
-      margin-left: 285px;
+      margin-left: 305px;
     }
   }
   
@@ -904,7 +950,7 @@ body, html {
     cursor: pointer;
     transition: transform 0.3s ease, opacity 0.3s ease;
     margin-top: 20px;  /* Espacement supplémentaire en haut du bouton */
-    margin-left: 300px;
+    margin-left: 320px;
   }
   
   /* Effet de survol pour le bouton "Contactez-moi" */
@@ -928,8 +974,8 @@ body, html {
     padding: 50px 20px;
     display: flex;
     justify-content: center;
-    min-height: 600px; /* Définit une hauteur minimale */
-  
+    min-height: 810px; /* Définit une hauteur minimale */
+    scroll-margin-top: 100px; /* Ajustez selon la hauteur de votre navbar */
     /* Style global pour tous les liens */
   a {
     color: #4b0082; /* Couleur du texte violet */
@@ -947,13 +993,13 @@ body, html {
   .about-content {
     display: flex;
     width: 100%;
-    gap: 300px; /* Ajustez la valeur pour augmenter l'espacement */
+    gap: 200px; /* Ajustez la valeur pour augmenter l'espacement */
     align-items: center;
   }
   
   /* Style pour l'image à gauche */
   .left {
-    flex: 1;
+    flex: 0.5;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -972,19 +1018,16 @@ body, html {
   
   /* Style pour le texte à droite */
   .right {
-    flex: 2;
-    text-align: left;
+    flex: 2; /* Permet à cette colonne de s'étendre */
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    margin-top: -50px; 
-    padding-left: 10px; 
-  }
+    flex-direction: column; /* Empile les enfants verticalement */
+    align-items: flex-start; /* Aligne tous les enfants à gauche */
+    gap: 20px; /* Ajoute un espace vertical entre "about-me" et "info-block" */
+}
   
   
   .right h2 {
-    font-size: 2em;
+    font-size: 4em;
     margin-left: 0; /* Aligne le texte à gauche (ou ajustez si besoin) */
     position: relative; /* Nécessaire pour positionner le trait */
   }
@@ -1002,41 +1045,26 @@ body, html {
   
   
   .right p {
-    font-size: 1.1em;
+    font-size: 2em;
     margin-bottom: 20px;
     margin-top: 0px;
   }
   
   .aboutme {
-    flex: 2;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Aligne le contenu à gauche */
-    justify-content: flex-start; /* Place le contenu en haut */
-    gap: 10px; /* Ajuste l'espacement entre le titre et le paragraphe */
-    margin-left: -185px; /* Déplace la div vers la gauche pour la rapprocher de l'image */
+    align-items: flex-start; /* Aligne le contenu du bloc "about-me" à gauche */
+    gap: 50px;
   }
   
   /* Style pour la div contenant la liste de liens */
   .info-blocks {
     display: flex;
-    gap: 20px;
-    width: 100%;
-    align-items: flex-start;
-    margin-left: 0; 
-    width: auto; 
-    overflow: visible; 
-  }
-  
-  .info-blocks {
-    display: flex;
-    gap: 30px;
-    width: 100%;
-    margin-top: 30px;
-    margin-left: -70px; /* Déplace la div vers la gauche (ajustez la valeur selon vos besoins) */
-    justify-content: space-between; /* Répartit les blocs de manière uniforme */
-    align-items: flex-start; /* Aligne les éléments en haut */
-    
+    flex-direction: row; /* Aligne les listes horizontalement si nécessaire */
+    justify-content: flex-start; /* Aligne les listes avec le bloc "about-me" */
+    align-items: flex-start; /* Aligne verticalement */
+    gap: 200px; /* Ajoute un espace entre les listes dans le bloc info-block */
+    width: 100%; /* S'assure que le bloc occupe toute la largeur disponible */
   }
   
   .info-list {
@@ -1046,21 +1074,20 @@ body, html {
   
   /* Style pour les intitulés des liens */
   .info-list strong {
-    font-size: 1.2em; /* Augmente la taille des intitulés */
-    font-weight: bold; /* Vous pouvez garder ou ajuster l'épaisseur du texte si nécessaire */
+    font-size: 2em; /* Augmente la taille des intitulés */
   }
   
   /* Style pour les éléments de liste */
   .info-list li {
     margin: 0; /* Supprime les marges supplémentaires */
-    padding: 2px 0; /* Réduit l'espacement interne (vous pouvez ajuster cette valeur) */
+    padding: 15px 0; /* Réduit l'espacement interne (vous pouvez ajuster cette valeur) */
   }
   
   /* Style pour les liens dans les éléments de la liste */
   .info-list a {
     margin: 0.1; /* Supprime toute marge autour des liens */
     padding: 0.1; /* Supprime tout padding autour des liens */
-    font-size: 1.2em; /* Même taille que les intitulés */
+    font-size: 2em; /* Même taille que les intitulés */
     font-weight: normal; /* Texte non gras */
     text-decoration: none; /* Supprime le soulignement si nécessaire */
     color: #4b0082; /* Couleur violette pour les liens */
@@ -1069,7 +1096,7 @@ body, html {
   /* Style pour les icônes devant les liens */
   .info-list i {
     margin-right: 8px; /* Espace de 8px entre l'icône et l'intitulé */
-    font-size: 1.2em; /* Ajuste la taille de l'icône si nécessaire */
+    font-size: 1.5em; /* Ajuste la taille de l'icône si nécessaire */
     display: inline-flex; /* Utilise inline-flex pour centrer l'icône */
     justify-content: center; /* Centre l'icône horizontalement */
     align-items: center; /* Centre l'icône verticalement */
@@ -1078,17 +1105,21 @@ body, html {
     border-radius: 50%; /* Rend les bords arrondis pour créer un cercle */
     border: 2px solid #4b0082; /* Bordure violette autour de l'icône */
     color: #4b0082; /* Couleur de l'icône */
-    font-size: 1.2em; /* Taille de l'icône */
     margin-right: 8px; /* Espace entre l'icône et le texte */
   }
   
+  .normal-text {
+    font-weight: normal; /* Supprime le gras */
+    font-size: inherit; /* Conserve la taille du texte du parent */
+  }
+
   .underline a {
-      text-decoration: underline; /* Ajoute le soulignement */  
+      text-decoration: underline; /* Ajoute le soulignement */ 
   }
   
   /* Style du bouton "Contactez-moi" */
   #contact-link {
-    font-size: 17px;
+    font-size: 2em;
     display: inline-block;
     border-color: #4b0082;
     border-radius: 8px;
@@ -1102,8 +1133,7 @@ body, html {
     text-decoration: none;
     cursor: pointer;
     transition: transform 0.3s ease, opacity 0.3s ease;
-    margin-top: 20px;  /* Espacement supplémentaire en haut du bouton */
-    margin-left: 300px;
+    margin-left: 400px;
   }
   
   /* Effet de survol pour le bouton "Contactez-moi" */
@@ -1129,6 +1159,7 @@ body, html {
     flex-direction: column;
     background: linear-gradient(to right, #4b0082, #8a2be2); /* Fond violet pour toute la section */
     color: #ffffff; /* Texte blanc */
+    scroll-margin-top: 100px; /* Ajustez selon la hauteur de votre navbar */
   }
 
   /* Style pour les titres et paragraphes */
@@ -1235,6 +1266,7 @@ body, html {
     background: linear-gradient(to right, #4b0082, #8a2be2); /* Fond violet pour toute la section */
     color: #ffffff; /* Texte blanc */
     width: 100%; /* S'assure que la section occupe toute la largeur */
+    scroll-margin-top: 100px; /* Ajustez selon la hauteur de votre navbar */
   }
 
   .about-section2.container-fluid {
@@ -1357,6 +1389,7 @@ body, html {
     background: linear-gradient(to right, #4b0082, #8a2be2); /* Fond violet pour toute la section */
     color: #ffffff; /* Texte blanc */
     width: 100%; /* S'assure que la section occupe toute la largeur */
+    scroll-margin-top: 100px; /* Ajustez selon la hauteur de votre navbar */
   }
 
   .about-section2.container-fluid {
@@ -1368,28 +1401,43 @@ body, html {
   /* Style pour les titres et paragraphes */
   .about-section2 h2 {
     color: #ffffff; /* Couleur du texte */
-    font-size: 25px;
+    font-size: 4em;
     margin-left: 0;
   }
 
   .about-section2 .exp h2 {
     margin-top: 0px; /* Réduit l'espace au-dessus du titre "Expériences professionnelles" */
-    
+    font-size: 3em;
+  }
+
+  .exp .box h2 {
+    font-size: 2em;
+
+  }
+
+  .about-section2 .forma h2 {
+    margin-top: 0px; /* Réduit l'espace au-dessus du titre "Expériences professionnelles" */
+    font-size: 3em;
+  }
+
+  .forma .box h2 {
+    font-size: 2em;
+
   }
 
   .about-section2 span {
     color: #ffffff; /* Couleur du texte */
-    font-size: 18px;
+    font-size: 1.5em;
     margin-bottom: 10px; /* Ajoute un espace en dessous du <span> */
   }
 
   .about-section2 p {
     color: #ffffff; /* Couleur du texte */
-    font-size: 18px;
+    font-size: 1.5em;
     margin-top: 10px; /* Ajoute un espace au-dessus du paragraphe */
   }
 
-  #underline2{
+  #underline2 {
     margin: 0;
     margin-bottom: 20px;
     margin-top: 50px;
@@ -1399,12 +1447,15 @@ body, html {
   #underline2::after {
     content: "";
     display: block;
-    width: 50px; /* Largeur fixe du trait */
+    width: 9%; /* Largeur fixe du trait */
     height: 4px; /* Épaisseur du trait */
     background-color: #ffffff; /* Couleur du trait */
     margin-top: 10px; /* Espace entre le texte et le trait */
   }
 
+  .about-section2 .forma {
+    margin-top: 100px;
+  }
 
   /* Style pour les boîtes (box) */
   .about-section2 .box {
@@ -1415,26 +1466,17 @@ body, html {
     padding: 15px; /* Espacement interne */
     margin: 35px 0px; /* Espacement vertical entre les encadrés et marge latérale */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
-    font-size: 1.2em;
   }
 
-  .box h2{
-    margin-bottom: 20px;
-  }
+  
+  
 
-  .forma{
-    margin-top: 100px;
-  }
-
-  .forma h2{
-    margin-top: 20px;
-  }
 
   #contactMe {
     margin-top: -50px;
     margin-bottom: 75px;
     padding: 10px 20px; /* Espace intérieur pour le bouton */
-    font-size: 16px; /* Taille de la police */
+    font-size: 2em; /* Taille de la police */
     border: 2px solid #ffffff; /* Ajoute une bordure violette */
     background-color: transparent; /* Supprime le fond violet */
     color: #ffffff; /* Couleur violette du texte */
@@ -1495,6 +1537,7 @@ body, html {
   .container {
     padding-left: 20px; /* Espacement global gauche */
     padding-right: 20px; /* Espacement global droite */
+    scroll-margin-top: 100px; /* Ajustez selon la hauteur de votre navbar */
   }
 
   .row {
@@ -1642,6 +1685,7 @@ body, html {
   .container {
     padding-left: 20px; /* Espacement global gauche */
     padding-right: 20px; /* Espacement global droite */
+    scroll-margin-top: 100px; /* Ajustez selon la hauteur de votre navbar */
   }
 
   .row {
@@ -1778,6 +1822,10 @@ body, html {
 
 @media screen and (min-width: 1024px){
 
+  #projets {
+    scroll-margin-top: 20px; /* Ajustez selon la hauteur de votre navbar */
+  }
+
   .myProjects.full-width {
     width: 100vw; /* 100% de la largeur de la fenêtre */
     max-width: 100vw; /* Supprime toute limitation de largeur */
@@ -1785,6 +1833,7 @@ body, html {
     margin-right: 0; /* Supprime les marges ajoutées par le framework */
     padding-left: 30px; /* Facultatif : supprime le padding interne gauche */
     padding-right: 30px; /* Facultatif : supprime le padding interne droit */
+    scroll-margin-top: 100px; /* Ajustez selon la hauteur de votre navbar */
   }
 
   .col-12, .col-md-6 {
@@ -1812,7 +1861,7 @@ body, html {
   }
 
   .section-title {
-    font-size: 2rem; /* Taille du texte */
+    font-size: 4rem; /* Taille du texte */
     font-weight: bold; /* Texte en gras */
     text-align: left; /* Aligne le texte à gauche */
     position: relative; /* Nécessaire pour positionner la barre */
@@ -1824,7 +1873,7 @@ body, html {
   .section-title::after {
     content: ""; /* Crée une barre sous le titre */
     display: block;
-    width: 50px; /* Largeur de la barre (ajustez si nécessaire) */
+    width: 9%; /* Largeur de la barre (ajustez si nécessaire) */
     height: 5px; /* Hauteur de la barre */
     background-color: #4b0082; /* Couleur de la barre (ajustez si nécessaire) */
     margin-top: 10px; /* Espace entre le texte et la barre */
@@ -1833,12 +1882,12 @@ body, html {
   }
 
   .myProjects h2 {
-    font-size: 25px; /* Remplacez par la taille utilisée dans "about-section" */
+    font-size: 4em; /* Remplacez par la taille utilisée dans "about-section" */
     color:#4b0082; /* Remplacez par la couleur utilisée dans "about-section" */
   }
 
   .myProjects p {
-    font-size: 17px; /* Remplacez par la taille utilisée dans "about-section" */
+    font-size: 1.5em; /* Remplacez par la taille utilisée dans "about-section" */
     color: #4b0082; /* Remplacez par la couleur utilisée dans "about-section" */
   }
 
@@ -1853,7 +1902,7 @@ body, html {
 
   .project-article h3 {
     color: #4b0082; /* Violet */
-    font-size: 25px; /* Taille du texte */
+    font-size: 2em; /* Taille du texte */
     font-weight: bold; /* Texte en gras */
     text-align: left; /* Aligne le texte à gauche */
     position: relative; /* Nécessaire pour positionner la barre */
@@ -1905,6 +1954,7 @@ body, html {
   }
 
   .project-article a {
+    font-size: 1.5em;
     width: 90%;
     background: transparent;
     display: inline-block; /* Pour gérer l'espacement et centrer facilement si besoin */
@@ -1919,6 +1969,7 @@ body, html {
   }
 
   .btnRealisation a {
+    font-size: 2em;
     background: transparent;
     display: inline-block; /* Pour gérer l'espacement et centrer facilement si besoin */
     padding: 10px;
@@ -1960,6 +2011,7 @@ body, html {
     color: #ffffff; /* Texte blanc pour le contraste */
     padding: 50px 15px; /* Espacement interne */
     margin: 0; /* Supprime les marges externes */
+    scroll-margin-top: 100px; /* Ajustez selon la hauteur de votre navbar */
   }
   
   /* Conteneur du formulaire */
@@ -2062,6 +2114,7 @@ body, html {
     color: #ffffff; /* Texte blanc pour le contraste */
     padding: 50px 15px; /* Espacement interne */
     margin: 0; /* Supprime les marges externes */
+    scroll-margin-top: 100px; /* Ajustez selon la hauteur de votre navbar */
   }
   
   /* Conteneur du formulaire */
@@ -2176,6 +2229,7 @@ body, html {
     color: #ffffff; /* Texte blanc pour le contraste */
     padding: 50px 15px; /* Espacement interne */
     margin: 0; /* Supprime les marges externes */
+    scroll-margin-top: 100px; /* Ajustez selon la hauteur de votre navbar */
   }
   
   /* Conteneur du formulaire */
@@ -2186,7 +2240,7 @@ body, html {
   
   /* Style général pour les titres */
   .contact-form-section h2 {
-    font-size: 25px; /* Taille du texte */
+    font-size: 4em; /* Taille du texte */
     font-weight: bold; /* Texte en gras */
     text-align: left; /* Aligne le texte à gauche */
     position: relative; /* Nécessaire pour positionner la barre */
@@ -2197,7 +2251,7 @@ body, html {
   .contact-form-section h2::after{
     content: ""; /* Crée une barre sous le titre */
     display: block;
-    width: 50px; /* Largeur de la barre (ajustez si nécessaire) */
+    width: 9%; /* Largeur de la barre (ajustez si nécessaire) */
     height: 5px; /* Hauteur de la barre */
     background-color: #ffffff; /* Couleur de la barre (ajustez si nécessaire) */
     margin-top: 10px; /* Espace entre le texte et la barre */
@@ -2208,7 +2262,7 @@ body, html {
   /* Texte descriptif */
   .contact-form-section p {
     text-align: start;
-    font-size: 17px;
+    font-size: 2em;
     margin-top: 35px;
     margin-bottom: 40px;
   }
@@ -2221,7 +2275,7 @@ body, html {
   /* Labels */
   .form-group label {
     display: block;
-    font-size: 1rem;
+    font-size: 1.5rem;
     margin-bottom: 10px;
     color: #ffffff;
   }
@@ -2232,7 +2286,7 @@ body, html {
   .form-group textarea {
     width: 100%; /* Prend toute la largeur disponible */
     padding: 15px;
-    font-size: 1rem;
+    font-size: 1.5rem;
     border: 1px solid #dddddd;
     border-radius: 5px;
     background-color: #ffffff; /* Fond blanc pour contraste */
@@ -2263,7 +2317,7 @@ body, html {
   .button {
     width: 20%; /* Prend toute la largeur */
     padding: 15px;
-    font-size: 15px;
+    font-size: 1.5em;
     border: none;
     border-radius: 5px;
     background-color: #ffffff; /* Fond blanc */
