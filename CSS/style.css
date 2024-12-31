@@ -2201,7 +2201,8 @@ section {
   
   /* Bouton d'envoi */
   .button {
-    width: 20%; /* Prend toute la largeur */
+    min-width: 150px; /* Largeur minimale pour éviter que le texte soit coupé */
+    max-width: 100%; /* Limite la largeur pour éviter qu'il soit trop large */
     padding: 15px;
     font-size: 15px;
     border: none;
@@ -2315,7 +2316,8 @@ section {
   
   /* Bouton d'envoi */
   .button {
-    width: 20%; /* Prend toute la largeur */
+    min-width: 150px; /* Largeur minimale pour éviter que le texte soit coupé */
+    max-width: 100%; /* Limite la largeur pour éviter qu'il soit trop large */
     padding: 15px;
     font-size: 1.5em;
     border: none;
